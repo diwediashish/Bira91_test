@@ -1,0 +1,93 @@
+#retailPanel,#salesOrder,#salesOrderModal,
+#pastDraftRequest,#events,#stockVisibility,#preSalesSampling,#posmRequisition
+{
+  border: 0px solid black;
+  max-height: 500px;
+  overflow-y: auto;
+
+}
+#retailPanel table,#salesOrder table,#salesOrderModal table,
+#pastDraftRequest table,#events table,#stockVisibility table,#posmRequisition table,
+#preSalesSampling table{
+  
+  background: #fff;
+  border: 0px solid black;
+
+}
+
+#retailPanel table th,#salesOrder table th,#salesOrderModal table th,
+#pastDraftRequest table th,#events table th,#stockVisibility table th,
+#preSalesSampling table th,#posmRequisition table th{
+padding: 8px;
+color:#fff;
+font-weight: bold;
+text-align: center;
+font-size: 1.2em;
+border-right: 1px solid black;
+border-left: 1px solid black;
+background: red;
+border-top: 1px solid #000;
+position: sticky;
+top: 0;
+}
+
+
+#retailPanel table td,#salesOrder table td,#salesOrderModal table td,
+#pastDraftRequest table td,#events table td,#stockVisibility table td,
+#preSalesSampling table td,#posmRequisition table td
+{
+  width: 25%;
+  color: #000;
+  text-align: center;
+  font-size: 0.97em;
+  padding: 8px;
+  border: 1px solid black;
+}
+
+.panel-heading{
+  margin-bottom: 20px;
+}
+
+
+
+#contactPanel {
+  padding-top: 10px;
+  }
+  
+  #contactPanel table th {
+  color: white;
+  border-top: 1.5px solid black;
+  background: red;
+  }
+  
+  #contactPanel table td {
+  background: white;
+  }
+
+  #overlay{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.8) none 50% / contain no-repeat;
+    cursor: pointer;
+    transition: 0.5s;
+    z-index: 100;
+    visibility: hidden;
+    opacity: 0;
+  }
+  #overlay.open {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  #overlay:after { /* X button icon */
+    content: "\2715";
+    position: absolute;
+    color:#fff;
+    top: 10px;
+    right:20px;
+    font-size: 2em;
+    z-index: 101;
+  }

@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BIRA91</title>
+    <!--Manifest-->
+    <link rel="manifest" href="/manifest.json">
+    <!--Manifest-->
+
+
+    <!--Imported Design library-->
+    <!--MDL-->
+    <link rel="stylesheet" href="../globalCSS/bootstrap.min.css">
+    <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+
+
+    <!--Imported link for App for Apple-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="BIRA91">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-57x57.png" sizes="57x57">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-60x60.png" sizes="60x60">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-72x72.png" sizes="72x72">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-76x76.png" sizes="76x76">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-114x114.png" sizes="114x114">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-120x120.png" sizes="120x120">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-152x152.png" sizes="152x152">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-180x180.png" sizes="180x180">
+    <meta name="msapplication-TileImage" content="/media/icons/manifest2/app-icon-48x48.png">
+    <meta name="msapplication-TileColor" content="#fff">
+    <meta name="theme-color" content="#3f51b5">
+    <!--Imported link for App for Apple and android-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha256-UK1EiopXIL+KVhfbFa8xrmAWPeBjMVdvYMYkTAEv/HI=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" integrity="sha256-4hqlsNP9KM6+2eA8VUT0kk4RsMRTeS7QGHIM+MZ5sLY=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../globalCSS/inhousestyle.css" />
+    <link rel="stylesheet" href="./leadList.css" />
+
+</head>
+
+<body>
+
+    <div id="app">
+        <nav class="navbar navbar-default nav-custom navbar-fixed-top">
+            <div class="container-fluid">
+                <header class="index-header">
+                    <div class="toggle-btn text-left" onclick="openNav()">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                    <div class="logoSection nav-logo text-left">
+                        <h3>Beast <span id=userName></span></h3>
+                    </div>
+                </header>
+            </div>
+        </nav>
+        <div id="backdraw">
+            <div id="sideNav" class="sidenav">
+                <div class="logo-nav">
+                    <img src="/media/icons/logo/Icons-12.png" class="img-responsive" alt="">
+                </div>
+                <a href="/view/homePage/homePage.html"><i class="fas fa-home"></i>Home</a>
+                <a href="/view/accountList/accountListView.html"><i class="fas fa-tv"></i>Accounts</a>
+                <a href="#"><i class="fas fa-clipboard-list"></i>Leads</a>
+                <a href="/view/calendar/calendar2.html"><i class="far fa-calendar-alt"></i>Calendar</a>
+
+                <div class="bottom-sidenav">
+                    <a href="/view/syncPage/loadingPage.html"><i class="fas fa-sync"></i>SYNC</a>
+                    <a href="#" data-toggle="modal" data-target="#logoutModal"><i class="fas fa-sign-out-alt"></i>LOGOUT</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <form class="example" onsubmit="return false" >
+                        <button type="button"><i class="fa fa-search"></i></button>
+                        <input type="text" onkeyup="applyFilter()" placeholder="Search Leads Name.." id="searchValue" name="search">
+                        <ul id="searchElement"></ul>
+                    </form>
+
+                    <div class="filter-section">
+                        <div class="filter filCom" data-toggle="modal" data-target="#filterModal"><img src="/media/icons/fliter2.png" class="img-responsive" alt=""></div>
+                    </div>
+                </div>
+                
+                <div class="col-xs-12">
+
+                    <div class="account-section">
+                        <ul class="panel-content" id="listOfLead">
+
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div id='notification' style="display: none;">
+                        <span>Username or Password is incorrect</span>
+                        <a href="#" class="close-notify">X</a>
+                    </div>
+                </div>
+            </div>
+            <div class="loader-div">
+                <div class="loader"></div>
+            </div>
+            <!-- Modal -->
+            <div id="filterModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h6 class="modal-title">Sort &amp; Filters</h6>
+                        </div>
+                        <div class="modal-body">
+                            <ul class="nav nav-tabs filter-head">
+                                <li class="active"><a data-toggle="tab" href="#channel">Channel</a></li>
+                                <li><a data-toggle="tab" href="#subChannel">Sub-Channel</a></li>
+                                <li><a data-toggle="tab" href="#type">Type</a></li>
+                                <!-- <li><a data-toggle="tab" href="#beacon">Beacon</a></li> -->
+                                <li><a data-toggle="tab" href="#size">Size</a></li>
+                                <li><a data-toggle="tab" href="#qco">QCO</a></li>
+                                <!-- <li><a data-toggle="tab" href="#biraselection">BIRA91 Selection</a></li> -->
+                                <li><a data-toggle="tab" href="#premiumClassification">Premium Classification</a></li>
+                                <li><a data-toggle="tab" href="#massClassification">Mass Classification</a></li>
+                            </ul>
+
+                            <div class="tab-content filter-content">
+                                <div id="channel" class="tab-pane fade in active">
+                                    <form>
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="channel[]" class="On-Premise" value="On-Premise" onchange="onChangeHandler(this)"> On-Premise<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                      
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="channel[]" class="Off-Premise" value="Off-Premise" onchange="onChangeHandler(this)"> Off-Premise<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="channel[]" class="Institutional" value="Institutional" onchange="onChangeHandler(this)"> Institutional<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="channel[]" class="Temporary-Event" value="Temporary-Event" onchange="onChangeHandler(this)"> Temporary Event<br><br>
+                                            <span class="checkmark"></span>
+                                        </label> 
+
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="channel[]" value="E-Commerce"> E-Commerce<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </form>
+                                </div>
+                                <div id="subChannel" class="tab-pane fade">
+                                    <form action="">
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="subChannel" class="Hotel" value="Hotel" onchange="onChangeSubHandler(this)"> Hotel<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="subChannel" class="General" value="General" onchange="onChangeSubHandler(this)"> General<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="subChannel" class="Retail-Account" value="Retail-Account" onchange="onChangeSubHandler(this)"> Retail Account<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="subChannel" class="Wholesaler" value="Wholesaler" onchange="onChangeSubHandler(this)"> Wholesaler<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="subChannel" class="Airlines" value="Airlines" onchange="onChangeSubHandler(this)"> Airlines<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="subChannel" class="Railways" value="Railways" onchange="onChangeSubHandler(this)"> Railways<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="subChannel" class="Cruise-Ships" value="Cruise-Ships" onchange="onChangeSubHandler(this)"> Cruise Ships<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="subChannel" class="Stadiums" value="Stadiums" onchange="onChangeSubHandler(this)"> Stadiums<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="subChannel" class="Duty-Free" value="Duty-Free" onchange="onChangeSubHandler(this)"> Duty Free<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="subChannel" class="Military" value="Military" onchange="onChangeSubHandler(this)"> Military<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <!-- <label class="checkBox-container">
+                                            <input type="checkbox" name="subChannel" value="None"> None<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>     -->
+                                    </form>
+                                </div>
+                                <div id="beacon" class="tab-pane fade">
+                                    <form action="">
+                                        <label class="checkRadio-container">
+                                            <input type="radio" name="beacon" value="true"> Yes<br><br>
+                                            <span class="radiomark"></span>
+                                        </label>
+                                        <label class="checkRadio-container">
+                                            <input type="radio" name="beacon" value="false"> No<br><br>
+                                            <span class="radiomark"></span>
+                                        </label>
+                                    </form>
+                                </div>
+                                <div id="qco" class="tab-pane fade">
+                                    <form action="">
+                                        <label class="checkRadio-container">
+                                            <input type="radio" name="qco" value="true"> Yes<br><br>
+                                            <span class="radiomark"></span>
+                                        </label>
+                                        <label class="checkRadio-container">
+                                            <input type="radio" name="qco" value="false"> No<br><br>
+                                            <span class="radiomark"></span>
+                                        </label>
+                                    </form>
+                                </div>
+                                <div id="size" class="tab-pane fade">
+                                    <form action="">
+                                        <label class="checkRadio-container">
+                                            <input type="radio" name="size" class="Large" value="Large"> Large<br><br>
+                                            <span class="radiomark"></span>
+                                        </label>
+                                        <label class="checkRadio-container">
+                                            <input type="radio" name="size" class="Small" value="Small"> Small<br><br>
+                                            <span class="radiomark"></span>
+                                        </label>
+                                    </form>
+                                </div>
+
+                                <div id="type" class="tab-pane fade">
+                                    <form action="">
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="type" class="Resorts" value="Resorts" onchange="onChangeTypeHandler(this)"> Resorts<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>    
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="type" class="Hostels" value="Hostels" onchange="onChangeTypeHandler(this)"> Hostels<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>    
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="type" class="Guesthouses" value="Guesthouses" onchange="onChangeTypeHandler(this)"> Guesthouses<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="type" class="Home-Stays" value="Home-Stays" onchange="onChangeTypeHandler(this)"> Home-Stays<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="type" class="Cottages" value="Cottages" onchange="onChangeTypeHandler(this)"> Cottages<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>    
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="type" class="Villas" value="Villas" onchange="onChangeTypeHandler(this)"> Villas<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="type" class="Bed-and-Breakfasts" value="Bed-and-Breakfasts" onchange="onChangeTypeHandler(this)"> Bed-and-Breakfasts<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="type" class="Luxury-Hotels" value="Luxury-Hotels" onchange="onChangeTypeHandler(this)"> Luxury Hotels<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="type" class="Business-Hotels" value="Business-Hotels" onchange="onChangeTypeHandler(this)"> Business Hotels<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="type" class="Economy-Hotels" value="Economy-Hotels" onchange="onChangeTypeHandler(this)"> Economy Hotels<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="type" class="Restaurant" value="Restaurant" onchange="onChangeTypeHandler(this)"> Restaurant<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="type" class="Bar" value="Bar" onchange="onChangeTypeHandler(this)"> Bar<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="type" class="Club" value="Club" onchange="onChangeTypeHandler(this)"> Club<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="type" class="Modern-Trade" value="Modern-Trade" onchange="onChangeTypeHandler(this)"> Modern Trade<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="type" class="Convenience-Store" value="Convenience-Store" onchange="onChangeTypeHandler(this)"> Convenience Store<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="type" class="Gas-Station" value="Gas-Station" onchange="onChangeTypeHandler(this)"> Gas Station<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="type" class="Drug-Store" value="Drug-Store" onchange="onChangeTypeHandler(this)"> Drug Store<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="type" class="Liquor-Shop" value="Liquor-Shop" onchange="onChangeTypeHandler(this)"> Liquor Shop<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="type" class="Wine-and-Beer-Shop" value="Wine-and-Beer-Shop" onchange="onChangeTypeHandler(this)"> Wine & Beer Shop<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="type" class="Home-Distributor" value="Home-Distributor" onchange="onChangeTypeHandler(this)"> Home Distributor<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="type" class="Diplomatic-Store" value="Diplomatic-Store" onchange="onChangeTypeHandler(this)"> Diplomatic Store<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="type" class="Airlines" value="Airlines" onchange="onChangeTypeHandler(this)"> Airlines<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="type" class="Railways" value="Railways" onchange="onChangeTypeHandler(this)"> Railways<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="type" class="Cruise-Ships" value="Cruise-Ships" onchange="onChangeTypeHandler(this)"> Cruise Ships<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="type" class="Stadiums" value="Stadiums" onchange="onChangeTypeHandler(this)"> Stadiums<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="type" class="Duty-Free" value="Duty-Free" onchange="onChangeTypeHandler(this)"> Duty Free<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                         
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="type" class="Canteen-Store-Department-On" value="Canteen-Store-Department-On" onchange="onChangeTypeHandler(this)"> Canteen Store Department - On<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="type" class="Canteen-Store-Department-Off" value="Canteen-Store-Department-Off" onchange="onChangeTypeHandler(this)"> Canteen Store Department - Off<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="type" class="Food-Festival" value="Food-Festival" onchange="onChangeTypeHandler(this)"> Food Festival<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="type" class="Exhibition" value="Exhibition" onchange="onChangeTypeHandler(this)"> Exhibition<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="type" class="Music-Festival" value="Music-Festival" onchange="onChangeTypeHandler(this)"> Music Festival<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="type" class="Others" value="Others" onchange="onChangeTypeHandler(this)"> Others<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </form>
+                                </div>
+
+                                <div id="biraselection" class="tab-pane fade">
+                                    <form action="">
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="biraselection" value="Premium"> Premium<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="biraselection" value="Boom"> Boom<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </form>
+                                </div>
+
+                                <div id="premiumClassification" class="tab-pane fade">
+                                    <form action="">
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="premiumClassification" value="P0"> P0<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="premiumClassification" value="P1"> P1<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="premiumClassification" value="P2"> P2<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="premiumClassification" value="P3"> P3<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <!-- <label class="checkBox-container">
+                                            <input type="checkbox" name="premiumClassification" value="P4"> P4<br><br>
+                                            <span class="checkmark"></span>
+                                        </label> -->
+                                    </form>
+                                </div>
+
+                                <div id="massClassification" class="tab-pane fade">
+                                    <form action="">
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="massClassification" value="M0"> M0<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="massClassification" value="M1"> M1<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="massClassification" value="M2"> M2<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkBox-container">
+                                            <input type="checkbox" name="massClassification" value="M3"> M3<br><br>
+                                            <span class="checkmark"></span>
+                                        </label>    
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <!--                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+                            <button type="button" class="btn btn-danger" id="clearAll" onclick="clearFilter()">CLEAR ALL</button>
+                            <button type="button" class="btn btn-success" data-dismiss="modal" onclick="applyFilter()" id="applyFilter">APPLY</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="add-btn">
+                <button class="button button5" onclick="handleCreateLeads()" data-toggle="modal">+</button>
+            </div>
+      
+            <footer class="bottom-nav mdl-layout--fixed-header">
+                <div class="nav-img">
+                    <img src="../../media/images/homePage/rsz_icons-07.png" alt="">
+                </div>
+                <div class="nav-img">
+                    <img src="../../media/images/homePage/rsz_icons-08.png" alt="">
+                </div>
+                <div class="nav-img">
+                    <img src="../../media/images/homePage/rsz_icons-09.png" alt="">
+                </div>
+                <div class="nav-img">
+                    <img src="../../media/images/homePage/rsz_icons-10.png" alt="">
+                </div>
+            </footer>
+
+            <!-- UI Spinner Imports -->
+            
+            <!-- UI Spinner Imports -->
+            <!--Script imported-->
+            
+            <!--Front end scripts-->
+            <script src="../globalJS/jquery-3.4.1.min.js"></script>
+            <script src="../globalJS/bootstrap.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha256-NXRS8qVcmZ3dOv3LziwznUHPegFhPZ1F/4inU7uC8h0=" crossorigin="anonymous"></script>
+            <script src="./leadList.js"></script>
+            <script src="../globalJS/spinner.js"></script>
+            <script src="../globalJS/main.js"></script>
+            <!--Front end scripts-->
+            <!--Backend End Import-->
+            <script src="/controller/indexedDB/idb.js"></script>
+            <script src="/controller/indexedDB/utility.js"></script>
+            <script src="/controller/sync/sync.js"></script>
+            <script src="/controller/globalJS/globalJS.js"></script>
+            <script src="/controller/leadList/leadList.js"></script>
+            <!--Backend End Import-->
+            <!--Backend Lead List view Controller-->
+            <!--Backend Lead List view Controller-->
+            <!--Script imported-->
+
+</body>
+
+</html>

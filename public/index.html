@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BIRA91</title>
+    <!--Manifest-->
+    <link rel="manifest" href="/manifest.json">
+    <!--Manifest-->
+
+
+    <!--Imported Design library-->
+    <link rel="stylesheet" href="/view/globalCSS/bootstrap.min.css">
+    <!--Fontawesome CDN-->
+    <!--Run time caching procedure-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/browser-image-compression@latest/dist/browser-image-compression.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha256-UK1EiopXIL+KVhfbFa8xrmAWPeBjMVdvYMYkTAEv/HI=" crossorigin="anonymous" />    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" integrity="sha256-4hqlsNP9KM6+2eA8VUT0kk4RsMRTeS7QGHIM+MZ5sLY=" crossorigin="anonymous" />
+    
+    
+    <script src="//mozilla.github.io/pdf.js/build/pdf.js"></script>
+    <!--Run time caching procedure-->
+    <!--Bootstrap-->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>-->
+    <!--Bootstrap-->
+    <!--Imported Design library-->
+
+    <!--Imported link for App for Apple-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="BIRA91">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-57x57.png" sizes="57x57">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-60x60.png" sizes="60x60">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-72x72.png" sizes="72x72">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-76x76.png" sizes="76x76">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-114x114.png" sizes="114x114">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-120x120.png" sizes="120x120">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-152x152.png" sizes="152x152">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-180x180.png" sizes="180x180">
+    <meta name="msapplication-TileImage" content="/media/icons/manifest2/app-icon-48x48.png">
+    <meta name="msapplication-TileColor" content="#fff">
+    <meta name="theme-color" content="#3f51b5">
+    <link rel="stylesheet" href="/view/globalCSS/inhousestyle.css" />
+    <link rel="stylesheet" href="/view/loginPage/index.css" />
+    <!--Imported link for App for Apple and android-->
+</head>
+
+<body>
+    <div class="index">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <header class="index-header">
+                    <div class="logoSection text-right">
+                        <img src="/media/icons/loginPage/biraLogo.png" alt="Bira Logo" class="logo" />
+                    </div>
+                </header>
+            </div>
+        </nav>
+        <div class="beast">
+            <img src="/media/images/loginPage/Beast-03.png" class="img-responsive" alt="">
+        </div>
+        <main class="index-section">
+            
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="banner">
+                            <img src="/media/images/loginPage/banner.png" class="banner-img" />
+                        </div>
+                    </div>
+                    <!--Login Card-->
+                    <div class="col-sm-6">
+                        <div class="demo-card-wide mdl-card mdl-shadow--2dp form-section">
+                            <div class="mdl-card__supporting-text">
+                                <div class="mdl-grid">
+
+                                    <div class="col-xs-12">
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: 100%;">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                            </div>
+                                            <input class="mdl-textfield__input input-field" required placeholder="User Name" autocomplete="off" type="text" id="username">
+                                        </div>
+                                        <p class="alert-danger text-center uservalidate">Enter correct Username</p>
+
+                                    </div>
+                                    <div class="col-xs-12 graybox">
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: 100%;">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                            </div>
+                                            <input class="mdl-textfield__input input-field" required placeholder="Password" type="password" id="password">
+                                        </div>
+                                    </div>
+
+                                    <!-- <div class="mdl-cell mdl-cell--12-col mdl-cell--4-col-phone graybox" id="spinnerDisplay"  style="text-align: center;">
+                                    <div class="mdl-spinner mdl-js-spinner is-active" ></div>
+                                </div> -->
+                                </div>
+                            </div>
+                            <div class="mdl-card__actions mdl-card--border btnDiv">
+                                <button class="btn btn-default login-btn" id="loginBtn" onclick="validateForm()">
+                                    SIGN IN
+                                </button>
+                                <div class="loader"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div id='notification' style="display: none;">
+                            <span>Username or Password is incorrect</span>
+                            <a href="#" class="close-notify">X</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </main>
+        <div class="mode">
+            <img src="/media/images/loginPage/Beast-04.png" class="img-responsive" alt="">
+        </div>
+    </div>
+    <div class="page-content">
+        
+    </div>
+
+
+
+
+    <!--Script to import-->
+    <script src="/view/globalJS/jquery-3.4.1.min.js"></script>
+    <script src="/view/globalJS/bootstrap.min.js"></script>
+    <script src="/controller/indexedDB/idb.js"></script>
+    <script src="/controller/indexedDB/utility.js"></script>
+    <script src="/controller/loginPage/loginPage.js"></script>
+    <script src="/view/loginPage/index.js"></script>
+    
+
+</body>
+
+</html>

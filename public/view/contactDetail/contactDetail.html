@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BIRA91</title>
+  <!--Manifest-->
+  <link rel="manifest" href="/manifest.json">
+  <!--Manifest-->
+
+  <!--Imported Design library-->
+  <link rel="stylesheet" href="../globalCSS/bootstrap.min.css">
+  <!--Fontawesome CDN-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+  <!--Bootstrap-->
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>-->
+  <!--Bootstrap-->
+  <!--Imported Design library-->
+
+  <!--Imported link for App for Apple-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="BIRA91">
+  <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-57x57.png" sizes="57x57">
+  <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-60x60.png" sizes="60x60">
+  <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-72x72.png" sizes="72x72">
+  <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-76x76.png" sizes="76x76">
+  <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-114x114.png" sizes="114x114">
+  <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-120x120.png" sizes="120x120">
+  <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-144x144.png" sizes="144x144">
+  <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-152x152.png" sizes="152x152">
+  <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-180x180.png" sizes="180x180">
+  <meta name="msapplication-TileImage" content="/media/icons/manifest2/app-icon-48x48.png">
+  <meta name="msapplication-TileColor" content="#fff">
+  <meta name="theme-color" content="#3f51b5">
+  <!--Imported link for App for Apple and android-->
+
+  <link rel="stylesheet" href="../globalCSS/inhousestyle.css" />
+  <link rel="stylesheet" href="contactDetail.css" />
+  <!--Imported link for App for Apple and android-->
+</head>
+
+<body>
+
+  <div id="app">
+    <nav class="navbar navbar-default nav-custom navbar-fixed-top">
+      <div class="container-fluid">
+        <header class="index-header">
+          <div class="toggle-btn text-left" onclick="openNav()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+          <div class="logoSection nav-logo text-left">
+            <h3>Beast <span id=userName></span></h3>
+          </div>
+        </header>
+      </div>
+    </nav>
+    <div id="backdraw">
+      <div id="sideNav" class="sidenav">
+        <div class="logo-nav">
+          <img src="/media/icons/logo/Icons-12.png" class="img-responsive" alt="">
+        </div>
+        <a href="/view/homePage/homePage.html"><i class="fas fa-home"></i>Home</a>
+        <a href="/view/accountList/accountListView.html"><i class="fas fa-tv"></i>Accounts</a>
+
+        <a href="#"><i class="fas fa-clipboard-list"></i>Leads</a>
+        <a href="/view/calendar/calendar2.html"><i class="far fa-calendar-alt"></i>Calendar</a>
+        <a href="/view/dashboard/dashboard.html"><i class="fas fa-chart-line"></i>Dashboard</a>
+        <div class="bottom-sidenav">
+          <a href="/view/syncPage/loadingPage.html"><i class="fas fa-sync"></i>SYNC</a>
+          <a href="#" data-toggle="modal" data-target="#logoutModal"><i class="fas fa-sign-out-alt"></i>LOGOUT</a>
+        </div>
+      </div>
+    </div>
+    <div class="contact-detail">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="main-head">
+              <h4>Contact Details</h4>
+              <div class="btn-section">
+                <button type="button" class="btn btn-primary" onclick="handleSaveContact()">Save & Exit</button>
+              </div>
+            </div>
+            
+            <div class="panel panel-default">
+              
+              <div class="panel-body">
+                <div class="row">
+
+                  <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                      <label class="control-label" for="Name"> Name</label>
+                      <input class="form-control" type="text" id="Name" lang="Name">
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6 col-xs-12">
+                    <!-- <div class="form-group">
+                      <label class="control-label" for="Role__c">Role</label>
+                      <input class="form-control" type="text" id="Role__c">
+                    </div> -->
+
+                    <div class="form-group">
+                      <label class="control-label" for="Role__c">Role</label>
+                      <select class="form-control"  id="Role__c">
+                          
+                       
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                      <label class="control-label" for="Account">Account Name</label>
+                      <input class="form-control" type="text" id="Account">
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                      <label class="switch">
+                        Active
+                        <input type="checkbox" id="Active__c">
+                       <span class="slider round"></span>
+                    </label>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                      <label class="control-label" for="Contact_Method__c"> 	
+                        Contact Method</label>
+                      <select class="form-control" id="Contact_Method__c">
+                        <option value=""> </option>
+                        <option value="Email">Email</option>
+                        <option value="Phone">Phone</option>
+                        <option value="SMS">SMS</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  
+
+                  <div class="col-sm-6 col-xs-12">
+                    <div class="form-group col-xs-8" style="padding: 0;">
+                      <label class="control-label" for="Aadhaar_Number__c"> Aadhaar Number</label>
+                      <input class="form-control" type="text" id="Aadhaar_Number__c">
+                      <span class="aadharConReq">Aadhar number is invalid</span>
+                    </div>
+
+                    <div class="col-xs-3">
+                      <label for="contactAadharNumberFile" class="cameraIcon">
+                          <i class="fa fa-camera contactAadharNumberFile" aria-hidden="true"></i>
+                      </label>
+                      <input id="contactAadharNumberFile" lang="contactAadharNumberFile" onchange="handleVisitingSave(this)"     accept="image/*" type="file"/>
+                  </div>
+                  </div>
+
+                  <div class="col-sm-6 col-xs-12">
+                    <div class="col-xs-8 form-group" style="padding: 0;">
+                      <label class="control-label" for="PAN_Number__c"> PAN Number</label>
+                      <input class="form-control" type="text" id="PAN_Number__c">
+                      <span class="panConReq">PAN number is invalid</span>
+                    </div>
+
+                    <div class="col-xs-3">
+                      <label for="contactPANNumberFile" class="cameraIcon">
+                          <i class="fa fa-camera contactPANNumberFile" aria-hidden="true"></i>
+                      </label>
+                      <input id="contactPANNumberFile" lang="contactPANNumberFile" onchange="handleVisitingSave(this)"     accept="image/*" type="file"/>
+                  </div>
+                  </div>
+
+                  <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                      <label class="control-label" for="Department"> Department</label>
+                      <input class="form-control" type="text" id="Department">
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                      <label class="switch">
+                        Loyalty Enabled
+                        <input type="checkbox" id="Loyalty_Enabled__c">
+                       <span class="slider round"></span>
+                    </label>
+                      
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                      <label class="switch">
+                        Facebook Fan
+                        <input type="checkbox" id="Facebook_Fan__c">
+                       <span class="slider round"></span>
+                    </label>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                      <label class="control-label" for="Age__c"> Age</label>
+                      <input class="form-control" type="number" id="Age__c">
+                    </div>
+                  </div>
+
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-xs-12">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <div class="text-left">
+                  <strong>
+                    Contact Information
+                  </strong>
+                </div>
+              </div>
+              <div class="panel-body">
+                <div class="row">
+
+                  <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                      <label class="control-label" for="Phone"> Phone</label>
+                      <input class="form-control" type="number" id="Phone" lang="Name">
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                      <label class="control-label" for="MobilePhone"> Mobile</label>
+                      <input class="form-control" type="number" id="MobilePhone" lang="Name">
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                      <label class="control-label" for="Email"> Email</label>
+                      <input class="form-control" type="email" id="Email">
+                    </div>
+                  </div>
+                  
+                  <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                      <label class="control-label" for="MailingAddress">Residential Address</label>
+                      <textarea class="form-control" type="text" id="MailingAddress"></textarea>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                      <label class="control-label" for="email"> Work Email</label>
+                      <input class="form-control" type="email" id="Work_Email__c">
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <div class="text-left">
+                  <strong>
+                    Other Details
+                  </strong>
+                </div>
+              </div>
+              <div class="panel-body">
+                <div class="row">
+
+                  <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                      <label class="switch">
+                        Decision Maker
+                        <input type="checkbox" id="Decision_Maker__c">
+                       <span class="slider round"></span>
+                    </label>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                      <label class="control-label" for="Favorite_Destination_s__c">Favorite Destination(s)</label>
+                      <input class="form-control" type="text" id="Favorite_Destination_s__c">
+                    </div>
+                  </div>
+                  
+                  <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                      <label class="control-label" for="Favorite_Restaurant_s__c">Favorite Restaurant(s)</label>
+                      <input class="form-control" type="text" id="Favorite_Restaurant_s__c">
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                      <label class="control-label" for="Favorite_Hotel_s__c"> Favorite Hotel(s)</label>
+                      <input class="form-control" type="text" id="Favorite_Hotel_s__c">
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                      <label class="control-label" for="Referred_By__c"> Referred By</label>
+                      <input class="form-control" type="text" id="Referred_By__c">
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                      <label class="control-label" for="Level__c"> Level</label>
+                      
+                      <select class="form-control" id="Level__c">
+                        <option value=""> </option>
+                        <option value="Primary">Primary</option>
+                        <option value="Secondary">Secondary</option>
+                        <option value="Tertiary">Tertiary</option>
+                      </select>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  </div>
+
+
+  <!-- Modal -->
+<div id="contactAlert" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+        <ul>Information missing on the following! Please add </ul>
+      </div>
+      <div class="modal-footer text-right">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  <!--Front End Import-->
+  <script src="../globalJS/jquery-3.4.1.min.js"></script>
+  <script src="../globalJS/bootstrap.min.js"></script>
+  <script src="../globalJS/main.js"></script>
+  <script src="/controller/indexedDB/idb.js"></script>
+  <script src="/controller/indexedDB/utility.js"></script>
+  <script src="/controller/sync/sync.js"></script>
+  <script src="/controller/globalJS/globalJS.js"></script>
+  <script src="/controller/contactDetail/contactDetail.js"></script>
+  <script src="/view/contactDetail/contactDetail.js"></script>
+  <!--Front End Import-->
+</body>
+
+</html>

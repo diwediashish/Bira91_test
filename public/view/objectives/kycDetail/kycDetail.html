@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BIRA91</title>
+    <!--Manifest-->
+    <link rel="manifest" href="/manifest.json">
+    <!--Manifest-->
+
+ <!--Compressing Images-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/browser-image-compression@latest/dist/browser-image-compression.js"></script>
+    <!--Compressing Images-->
+
+    <!--Imported Design library-->
+
+    <!--Bootstrap-->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>-->
+    <!--Bootstrap-->
+    <!--Imported Design library-->
+
+    <!--Imported link for App for Apple-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="BIRA91">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-57x57.png" sizes="57x57">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-60x60.png" sizes="60x60">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-72x72.png" sizes="72x72">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-76x76.png" sizes="76x76">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-114x114.png" sizes="114x114">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-120x120.png" sizes="120x120">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-152x152.png" sizes="152x152">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-180x180.png" sizes="180x180">
+    <meta name="msapplication-TileImage" content="/media/icons/manifest2/app-icon-48x48.png">
+    <meta name="msapplication-TileColor" content="#fff">
+    <meta name="theme-color" content="#3f51b5">
+    <!--Imported link for App for Apple and android-->
+
+    <!--Fontawesome CDN-->
+    <!--Front end imports-->
+    <link rel="stylesheet" href="/view/globalCSS/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="/view/globalCSS/inhousestyle.css" />
+    <link rel="stylesheet" href="kycDetail.css" />
+    <!--Front end imports-->
+    
+</head>
+
+<body>
+    <!-- Always shows a header, even in smaller screens. -->
+    <div id="app">
+        <nav class="navbar navbar-default nav-custom navbar-fixed-top">
+            <div class="container-fluid">
+                <header class="index-header">
+                    <div class="toggle-btn text-left" onclick="openNav()">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                    <div class="logoSection nav-logo text-left">
+                        <h3>Beast <span id=userName></span></h3>
+                    </div>
+                    <div class="dropdown-toggle showDropdown" data-toggle="dropdown">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li><a onclick="handlePageRedirect('Home')">Home</a></li>
+                        <li><a onclick="handlePageRedirect('Detail')">Detail</a></li>
+                        <li><a onclick="handlePageRedirect('Media')">Media</a></li>
+                        <li><a onclick="handlePageRedirect('Related')">Related</a></li>
+                      </ul>
+                </header>
+            </div>
+        </nav>
+        <div id="backdraw">
+            <div id="sideNav" class="sidenav">
+                <div class="logo-nav">
+                    <img src="/media/icons/logo/Icons-12.png" class="img-responsive" alt="">
+                </div>
+                <a href="/view/homePage/homePage.html"><i class="fas fa-home"></i>Home</a>
+                <a href="/view/accountList/accountListView.html"><i class="fas fa-tv"></i>Accounts</a>
+                <a href="#"><i class="fas fa-clipboard-list"></i>Leads</a>
+                <a href="/view/calendar/calendar2.html"><i class="far fa-calendar-alt"></i>Calendar</a>
+
+                <div class="bottom-sidenav">
+                    <a href="/view/syncPage/loadingPage.html"><i class="fas fa-sync"></i>SYNC</a>
+                    <a href="#" data-toggle="modal" data-target="#logoutModal"><i class="fas fa-sign-out-alt"></i>LOGOUT</a>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+           <div class="row">
+               <div class="col-xs-12">
+                            <div class="account-section">
+                                <div class="panel-content" id="listOfAcc">
+        
+                            </div>
+                        </div>
+                    </div>   
+           </div>
+            <div class="page-content">
+                <div class="demo-card-wide mdl-card mdl-shadow--2dp" style="width: 100%;">
+                    <div class="mdl-card__title">
+                      <h5 class="mdl-card__title-text">KYC Details</h5>
+                    </div>
+
+                    <div class="mdl-card__supporting-text">
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <strong>
+                                    Statutory Information
+                                </strong>
+                            </div>
+                        
+                            <div class="panel-body" >
+                                <div class="row" id="statutory">
+                                    <div class="col-xs-12">
+                                        <label class="switch">
+                                            Temporarily Closed
+                                            <input type="checkbox" checked id="Temporarily_Closed" onchange="checkBoxChangeHandler(this)">
+                                           <span class="slider round"></span>
+                                        </label>
+                                    </div> 
+                                    <div class="col-sm-5 col-xs-10">
+                                        <div class="form-group" id="estimatedSalesDiv">
+                                           <label class="control-label showReq" for="Estimated_Monthly_Premium_Mass_Sales">Estimated Monthly Premium/Mass Sales (CE)</label>
+                                            <input class="form-control" step=".0001" type="number" id="Estimated_Monthly_Premium_Mass_Sales" lang="Estimated_Monthly_Premium_Mass_Sales" onkeyup="formListener(this)">
+                                            <span id="requireEst">Estimated Monthly Premium Mass Sales is required</span>
+                                            <span class="error estError">Only 4 decimal digits are allowed</span>
+                                          </div>
+                                    </div>
+                                    <div class="col-sm-5 col-xs-12">
+                                        <div class="row">
+                                        <div class="col-xs-10 form-group" id="outletNameDiv" style="margin: 7px 0;">
+                                           <label class="control-label" for="outletName">Group Accounts</label>
+                                            <input class="form-control" type="text" id="Parent_Account_Name" lang="groupAccount" disabled>
+                                            
+                                          </div>
+                                          <div class="col-xs-2" >
+                                            <div class="iconAlignment">
+                                                <i class="fas fa-search"  data-toggle="modal" onclick="handleFetchAccount()" data-target="#groupAccounts"></i>
+                                            </div>      
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5 col-xs-10">
+                                        <div class="form-group" id="outletNameDiv">
+                                           <label class="control-label" for="outletName">License Name</label>
+                                            <input class="form-control" type="text" id="License_Name" lang="License_Name" onkeyup="formListener(this)">
+                                            
+                                          </div>
+                                    </div>
+                                    <div class="col-sm-1 col-xs-2">
+                                        <div class="image-upload form-group">
+                                            <label for="Front_Fascade_File">
+                                                <i class="fa fa-camera Front_Fascade_File" aria-hidden="true"></i>
+                                                
+                                            </label>
+                                            <input id="Front_Fascade_File" lang="Front_Fascade_File" onchange="fileInput(this)" capture="camera"   accept="image/*" type="file"/>
+                                        </div>
+                                    </div>
+                                    
+
+                                    <div class="col-sm-5 col-xs-10">
+                                        <div class="form-group" id="licenseNumberDiv">
+                                           <label class="control-label" for="licenseNumber">License Number</label>
+                                            <input class="form-control" type="text" id="License_Number" lang="License_Number" onkeyup="formListener(this)">
+                                            
+                                          </div>
+                                    </div>
+                                    <div class="col-sm-1 col-xs-2">
+                                        <div class="image-upload form-group">
+                                            <label for="License_Copy_File">
+                                                <i class="fa fa-camera License_Copy_File" aria-hidden="true"></i>
+                                                
+                                            </label>
+                                            <input id="License_Copy_File" lang="License_Copy_File"  onchange="fileInput(this)"    accept="image/*" type="file"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5 col-xs-10">
+                                        <div class="form-group" id="licenseTypeDiv">
+                                           <label class="control-label" for="licenseType">License Type</label>
+                                            <input class="form-control" type="text" id="License_Type" lang="License_Type" onkeyup="formListener(this)">
+                                            
+                                          </div>
+                                    </div>
+
+                                    <div class="col-sm-5 col-xs-12 form-group">
+                                        <div class="row">
+                                        <div class="col-xs-10 form-group" id="ifscCodeDiv" style="margin: 7px 0;">
+                                           <label class="control-label" for="ifscCode">IFSC Code</label>
+                                            <input class="form-control" type="text" id="IFSC_Code" onkeyup="handleIFSCField(this)">
+                                            <span class="ifscReq">Invalid IFSC Code</span>
+
+                                          </div>
+                                          <div class="col-xs-2" >
+                                            <div class="iconAlignment">
+                                                <i class="fas fa-search" onclick="handleSearchAccount()"></i>
+                                            </div>      
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-5 col-xs-10">
+                                        <div class="form-group" id="bankAccountNameDiv">
+                                           <label class="control-label" for="bankAccountName">Bank Name</label>
+                                            <input class="form-control" disabled type="text" id="Bank_Account_Name" lang="Bank_Account_Name" onkeyup="formListener(this)">
+                                            
+                                          </div>
+                                    </div>
+
+                                    <div class="col-sm-5 col-xs-10">
+                                        <div class="form-group" id="bankAddressDiv">
+                                           <label class="control-label" for="bankAddressName">Bank Address</label>
+                                            <textarea class="form-control" type="text" id="Bank_Address" disabled lang="Bank_Address"></textarea>
+                                            
+                                          </div>
+                                    </div>
+                                    <div class="col-sm-5 col-xs-10">
+                                        <div class="form-group" id="bankAccountNoDiv">
+                                           <label class="control-label" for="bankAccountNo">Bank Account No.</label>
+                                            <input class="form-control" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="Bank_Account_Number" onkeyup="formListener(this)" lang="Bank_Account_Number">
+                                            
+                                          </div>
+                                    </div>
+                                    <div class="col-sm-5 col-xs-10">
+                                        <div class="form-group" id="panNumberDiv">
+                                           <label class="control-label" for="panNumber">PAN Number</label>
+                                            <input class="form-control panNumber" type="text" id="PAN" lang="PAN" onkeyup="formListener(this)">
+                                            <span class="panReq">PAN number is invalid</span>
+
+                                          </div>
+                                    </div>
+                                    <div class="col-sm-1 col-xs-2">
+                                        <div class="image-upload form-group">
+                                            <label for="Pan_Card_File">
+                                                <i class="fa fa-camera Pan_Card_File" aria-hidden="true"></i>
+                                                
+                                            </label>
+                                            <input id="Pan_Card_File" lang="Pan_Card_File" onchange="fileInput(this)"    accept="image/*" type="file"/>
+                                        </div>
+                                    </div>
+
+                                    <!-- <div class="col-sm-6 col-xs-12" >
+                                        <div class="form-group" id="tehsilDiv">
+                                           <label class="control-label" for="tehsil">Tehsil</label>
+                                            <input class="form-control" type="text" id="Sales_Tehsil" lang="Sales_Tehsil" onkeyup="formListener(this)">
+                                            
+                                          </div>
+                                    </div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <div class="form-group" id="districtDiv">
+                                           <label class="control-label" for="district">District</label>
+                                            <input class="form-control" type="text" id="Sales_District" lang="Sales_District" onkeyup="formListener(this)">
+                                            
+                                          </div>
+                                    </div>
+                                     -->
+                                     <div class="col-sm-5 col-xs-10">
+                                        <div class="form-group" id="gstNumberDiv">
+                                           <label class="control-label" for="gstNumber">GST Number</label>
+                                            <input class="form-control gstNumber" type="text" id="GST" lang="GST" onkeyup="formListener(this)">
+                                            <span class="gstReq">GST number is invalid</span>
+                                          </div>
+                                    </div>
+        
+                                    
+                                    
+                                    <div class="col-sm-1 col-xs-2">
+                                        <div class="image-upload form-group">
+                                            <label for="Gst_Registration_Certificate_File">
+                                                <i class="fa fa-camera Gst_Registration_Certificate_File" aria-hidden="true"></i>
+                                                
+                                            </label>
+                                            <input id="Gst_Registration_Certificate_File" lang="Gst_Registration_Certificate_File" onchange="fileInput(this)"    accept="image/*" type="file"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5 col-xs-10">
+                                        <div class="form-group" id="tinNumberDiv">
+                                           <label class="control-label" for="tinNumber">TIN Number</label>
+                                            <input class="form-control tinNumber" type="text" id="TIN" lang="TIN" onkeyup="formListener(this)">
+                                            <span class="tinReq">TIN number is invalid</span>
+                                          </div>
+                                    </div>
+                                    <div class="col-sm-1 col-xs-2">
+                                        <div class="image-upload form-group">
+                                            <label for="Tin_Vat_Certicate_File">
+                                                <i class="fa fa-camera Tin_Vat_Certicate_File" aria-hidden="true"></i>
+                                                
+                                            </label>
+                                            <input id="Tin_Vat_Certicate_File" lang="Tin_Vat_Certicate_File" onchange="fileInput(this)"    accept="image/*" type="file"/>
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="col-sm-5 col-xs-10">
+                                        <div class="form-group" id="centralSalesTaxNumberDiv">
+                                           <label class="control-label" for="centralSalesTaxNumber">Central Sales Tax Number</label>
+                                            <input class="form-control" type="text" id="Central_Sales_Tax_Number" lang="Central_Sales_Tax_Number" onkeyup="formListener(this)">
+                                            
+                                          </div>
+                                    </div>
+                                    <div class="col-sm-5 col-xs-10">
+                                        <div class="form-group" id="vatRegNumberDiv">
+                                           <label class="control-label" for="vatRegNumber">VAT Registration Number</label>
+                                            <input class="form-control" type="text" id="VAT_Registration_Number" lang="VAT_Registration_Number" onkeyup="formListener(this)">
+                                          </div>
+                                    </div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <div class="form-group" >
+                                        <label class="control-label" >Partnership Deed</label>
+                                        <div class="image-upload_NoInput form-group" >
+                                            <label for="Parternership_Deed_File">
+                                                <i class="fa fa-camera Parternership_Deed_File" aria-hidden="true"></i>
+                                                    
+                                            </label>
+                                            <input id="Parternership_Deed_File" lang="Parternership_Deed_File" onchange="fileInput(this)"    accept="image/*" type="file"/>
+                                        </div>
+                                            
+                                          </div>
+                                    </div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <div class="form-group" >
+                                            <label class="control-label" >Registration Certificate</label>
+                                            <div class="image-upload_NoInput form-group">
+                                                <label for="Registration_Certificate_File">
+                                                    <i class="fa fa-camera Registration_Certificate_File" aria-hidden="true"></i>
+                                                        
+                                                </label>
+                                                <input id="Registration_Certificate_File" lang="Registration_Certificate_File" onchange="fileInput(this)"   accept="image/*" type="file"/>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                    
+                                    <div class="col-sm-5 col-xs-10">
+                                        <div class="form-group" >
+                                            <label class="control-label" >UB Monthly Premium Volume (CE)</label>
+                                            <input class="form-control" step=".0001" min="0" type="number" id="UB_Monthly_Premium_Volume" lang="UB_Monthly_Premium_Volume" onkeyup="formListener(this)"/>
+                                            <span class="error ubMPV">Only 4 decimal digits are allowed</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-5 col-xs-10">
+                                        <div class="form-group" >
+                                            <label class="control-label" >UB Monthly Mass Volume (CE)</label>
+                                            <input class="form-control" step=".0001" min="0" type="number" id="UB_Monthly_Mass_Volume" lang="UB_Monthly_Mass_Volume" onkeyup="formListener(this)"/>
+                                            <span class="error ubMMV">Only 4 decimal digits are allowed</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-sm-5 col-xs-10">
+                                        <div class="form-group" >
+                                            <label class="control-label" >ABI Monthly Premium Volume (CE)</label>
+                                            <input class="form-control" step=".0001" min="0" type="number" id="ABI_Monthly_Premium_Volume" lang="ABI_Monthly_Premium_Volume" onkeyup="formListener(this)"/>
+                                            <span class="error abiMPV">Only 4 decimal digits are allowed</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-5 col-xs-10">
+                                        <div class="form-group" >
+                                            <label class="control-label" >ABI Monthly Mass Volume (CE)</label>
+                                            <input class="form-control" step=".0001" min="0" type="number" id="ABI_Monthly_Mass_Volume" lang="ABI_Monthly_Mass_Volume" onkeyup="formListener(this)"/>
+                                            <span class="error abiMMV">Only 4 decimal digits are allowed</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-sm-5 col-xs-10">
+                                        <div class="form-group" >
+                                            <label class="control-label" >Carlsberg Monthly Premium Volume (CE)</label>
+                                            <input class="form-control" step=".0001" type="number" id="Carlsberg_Monthly_Premium_Volume" lang="Carlsberg_Monthly_Premium_Volume" onkeyup="formListener(this)"/>
+                                            <span class="error carlMPV">Only 4 decimal digits are allowed</span>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-sm-5 col-xs-10">
+                                        <div class="form-group" >
+                                            <label class="control-label" >Carlsberg Monthly Mass Volume (CE)</label>
+                                            <input class="form-control" step=".0001" min="0" type="number" id="Carlsberg_Monthly_Mass_Volume" lang="Carlsberg_Monthly_Mass_Volume" onkeyup="formListener(this)"/>
+                                            <span class="error carlMMV">Only 4 decimal digits are allowed</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-sm-5 col-xs-10">
+                                        <div class="form-group" >
+                                            <label class="control-label" >Craft Monthly Premium Volume (CE)</label>
+                                            <input class="form-control" step=".0001" min="0" type="number" id="Craft_Monthly_Premium_Volume" lang="Craft_Monthly_Premium_Volume" onkeyup="formListener(this)"/>
+                                            <span class="error craftMPV">Only 4 decimal digits are allowed</span>
+                                        </div>
+                                    </div>
+                                    
+
+                                    <div class="col-sm-5 col-xs-10">
+                                        <div class="form-group" >
+                                            <label class="control-label" >Craft Monthly Mass Volume (CE)</label>
+                                            <input class="form-control" step=".0001" min="0" type="number" id="Craft_Monthly_Mass_Volume" lang="Craft_Monthly_Mass_Volume" onkeyup="formListener(this)"/>
+                                            <span class="error craftMMV">Only 4 decimal digits are allowed</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5 col-xs-10">
+                                        <div class="form-group" id="billingStreetDiv">
+                                           <label class="control-label" for="billingStreet">Billing Address</label>
+                                            <textarea class="form-control" type="text" rows= "3" id="Billing_Street" onkeyup="formListener(this)" lang="Billing_Street" ></textarea>
+                                            
+                                          </div>
+                                    </div>
+                                    <div class="col-sm-5 col-xs-10">
+                                        <div class="form-group" id="billingPostalCodeDiv">
+                                           <label class="control-label" for="billingPostalCode">Billing Postal Code</label>
+
+                                            <input class="form-control" lang="Billing_Postal_Code" type="text" id="Billing_Postal_Code" onkeyup="formListener(this)">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5 col-xs-10">
+                                        <div class="form-group" id="billingCityDiv">
+                                           <label class="control-label" for="billingCity">Billing City</label>
+                                            <input class="form-control" lang="Billing_City" type="text" id="Billing_City" onkeyup="formListener(this)">
+                                          </div>
+                                    </div>
+                                    <div class="col-sm-5 col-xs-10">
+                                        <div class="form-group" id="billingStateDiv">
+                                           <label class="control-label" for="billingState">Billing State</label>
+                                            <input class="form-control" type="text" id="billingState" value=" " readonly >
+                                            
+                                          </div>
+                                    </div>
+                                    <div class="col-sm-5 col-xs-10">
+                                        <div class="form-group" id="billingCountryDiv">
+                                        <label class="control-label" for="billingCountry">Billing Country</label>
+                                        <input class="form-control" type="text" id="billingCountry" value=" " readonly >
+                                            
+                                          </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <label class="switch">
+                                            Same as Billing Address
+                                            <input type="checkbox" checked id="sameAsBilling" onchange="checkBoxChangeHandler(this)">
+                                           <span class="slider round"></span>
+                                        </label>
+                                    </div> 
+                                    
+                                  </div>
+                            
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="text-left owner-head">
+                                    <strong>
+                                        Owner/Director
+                                    </strong>
+                                </div>
+                                
+                                <div class="text-right owner-contacts">
+                                    <button class="btn btn-default" data-toggle="modal" data-target="#ownerCreation" onclick="handleCreateContactInitiate('ownerContacts')" ><i class="fas fa-plus-square"></i></button>
+                                    <button class="btn btn-default" data-toggle="modal" data-target="#contacts" onclick="showContacts()"><i class="far fa-address-book"></i></button>
+                                </div>
+                            </div>
+                            <div class="panel-body" id="ownerPanel">
+                                <!-- <div class="row">
+                                    
+                                    <div class="col-xs-12" id="titleOwner">
+                
+                                    </div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <div class="form-group" id='ownerFirstNameDiv'>
+                                           <label class="control-label" for="ownerFirstName">First Name</label>
+                                            <input class="form-control" type="text" id="Owner_First_Name" lang="Owner_First_Name" onkeyup="formListener(this)">
+                                            
+                                          </div>
+                                    </div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <div class="form-group" id="ownerLastNameDiv">
+                                           <label class="control-label" for="ownerLastName">Last Name</label>
+                                             <input class="form-control" type="text" id="Owner_Last_Name" lang="Owner_Last_Name" onkeyup="formListener(this)">
+                                            
+                                          </div>
+                                    </div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <div class="form-group" id="ownerAddressDiv">
+                                        <label class="control-label" for="ownerAddress">Address</label>
+
+                                            <textarea class="form-control" type="text" rows= "3" id="Owner_Address" onkeyup="formListener(this)" lang="Owner_Address" ></textarea>
+                                          </div>
+                                    </div>
+                                  </div> -->
+
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="text-left owner-head">
+                                    <strong>
+                                        Person Contacted
+                                    </strong>
+                                </div>
+                                
+                                <div class="text-right owner-contacts">
+                                    <button class="btn btn-default" data-toggle="modal" data-target="#ownerCreation" onclick="handleCreateContactInitiate('personContacts')" ><i class="fas fa-plus-square"></i></button>
+                                    <button class="btn btn-default" data-toggle="modal" data-target="#contacts" onclick="showContacts()"><i class="far fa-address-book"></i></button>
+                                </div>
+                                
+                            </div>
+                            <div class="panel-body" id="personPanel" >
+                                <!-- <div class="row">
+                                    <div class="col-xs-12" id="titleContact">
+                
+                                    </div>
+                                    <div class="col-sm-6 col-xs-12" >
+                                        <div class="form-group" id="contactFNameDiv">
+                                        <label class="control-label" for="contactFName">First Name</label>
+                                                <input class="form-control" type="text" id="Contact_First_Name" lang="Contact_First_Name" onkeyup="formListener(this)">
+                                            
+                                          </div>
+                                    </div>
+                                    <div class="col-sm-6 col-xs-12" >
+                                        <div class="form-group" id="contactLNameDiv">
+                                           <label class="control-label" for="contactLName">Last Name</label>
+                                            <input class="form-control" type="text" id="Contact_Last_Name" lang="Contact_Last_Name" onkeyup="formListener(this)">
+                                            
+                                          </div>
+                                    </div>
+                                    <div class="col-sm-6 col-xs-12" >
+                                        <div class="form-group" id="contactPersonNumber">
+                                           <label class="control-label" for="contactLName">Phone No.</label>
+                                            <input class="form-control" type="number" id="Contact_Person_Number" lang="Contact_Person_Number" onkeyup="formListener(this)">
+                                            
+                                          </div>
+                                    </div>
+                                  </div> -->
+                            
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col-xs-12">
+                            <div class="save-next">
+                                <button  onclick="handleSubmitModal()" class="btn btn-default" style="width: 88%;" >Submit</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                  </div>    
+        </div>
+    </div>
+    <div id="ownerCreation" class="modal fade" role="dialog">
+        
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    Contact Creation
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <form onsubmit="return false;" >
+                <div class="modal-body text-center">
+                    
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label class="control-label" for="contactTitle">Title</label>
+                                <select class="form-control" required  id="contactTitle">
+                                <option  value="" selected disabled>Title</option>
+                                <option value="Mr.">Mr.</option>
+                                <option value="Ms.">Ms.</option>
+                                <option value="Mrs.">Mrs.</option>
+                                </select>
+                              </div> 
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label class="control-label" for="contactFirstName">First Name</label>
+                                <input type="text" class="form-control" required id="contactFirstName" placeholder="" aria-describedby="basic-addon1">
+                            </div>    
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label class="control-label" for="contactLastName">Last Name</label>
+                                <input type="text" class="form-control" required id="contactLastName" placeholder="" aria-describedby="basic-addon1">
+                            </div>    
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label class="control-label" for="contactAddress">Residential Address</label>
+                                <textarea class="form-control" type="text" id="contactAddress" rows= "3" placeholder=""  ></textarea>
+                            </div>    
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label class="control-label" for="contactPhone1">Phone 1</label>
+                                <input type="number" class="form-control" required id="contactPhone1" placeholder="" aria-describedby="basic-addon1">
+                            </div>    
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label class="control-label" for="contactPhone2">Phone 2</label>
+                                <input type="number" class="form-control" id="contactPhone2" placeholder="">
+                            </div>    
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label class="control-label" for="contactEmail">Email</label>
+                                <input type="email" class="form-control" id="contactEmail" placeholder="">
+                                <span class="emailConReq">Email is invalid</span>
+                            </div>    
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label class="control-label" for="contactBirthDate">Birth Date</label>
+                                <input type="date" class="form-control" id="contactBirthDate" placeholder="">
+                                <!-- <input type="date" class="form-control" id="contactBirthDate" placeholder="Birth Date" aria-describedby="basic-addon1"> -->
+                            </div>    
+                        </div>
+                        <div class="col-xs-12 decisionMaker">
+                            <label class="switch">
+                                Decision Maker
+                                <input type="checkbox" id="decisionMaker" onchange="checkBoxChangeHandler(this)">
+                               <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label class="control-label" for="contactAniversary">Anniversary</label>
+                                <input type="date" class="form-control" id="contactAniversary" placeholder="">
+                                <!-- <input type="date" class="form-control" id="contactAniversary" placeholder="Aniversary" aria-describedby="basic-addon1"> -->
+                            </div>    
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label class="control-label" for="contactRole">Role</label>
+                                <select class="form-control"  id="contactRole">
+                                    
+                                 
+                                </select>
+                              </div> 
+                        </div>
+                        
+                        <div class="col-xs-12">
+                            <div class="row" id="conAadharno">
+                                <div class="col-xs-8 form-group">
+                                    <label class="control-label" for="contactAadharNumber">Aadhar Number</label>
+                                    <input type="text" class="form-control" id="contactAadharNumber" aria-describedby="basic-addon1">
+                                    <span class="aadharConReq">Aadhar number is invalid</span>
+                                </div>    
+                                <div class="col-xs-4">
+                                    <label for="contactAadharNumberFile">
+                                        <i class="fa fa-camera contactAadharNumberFile" aria-hidden="true"></i>
+                                    </label>
+                                    <input id="contactAadharNumberFile" lang="contactAadharNumberFile" onchange="handleVisitingSave(this)"     accept="image/*" type="file"/>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="row" id="conPanno">
+                                <div class="col-xs-8 form-group">
+                                    <label class="control-label" for="contactPANNumber">PAN Number</label>
+                                    <input type="text" class="form-control" id="contactPANNumber" aria-describedby="basic-addon1">
+                                    <span class="panConReq">PAN number is invalid</span>
+                                </div>    
+                                <div class="col-xs-4 ">
+                                    <label for="contactPANNumberFile">
+                                        <i class="fa fa-camera contactPANNumberFile" aria-hidden="true"></i>
+                                    </label>
+                                    <input id="contactPANNumberFile" lang="contactPANNumberFile" onchange="handleVisitingSave(this)"     accept="image/*" type="file"/>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="contact-visit image-upload form-group">
+                                <label for="VisitingCard">
+                                    <i class="fa fa-camera VisitingCard" aria-hidden="true"></i>
+                                    Visiting Card
+                                </label>
+                                <input id="VisitingCard" lang="VisitingCard" onchange="handleVisitingSave(this)"     accept="image/*" type="file"/>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer text-center">
+                    <button  type="submit"  onclick="handleContactSave()" class="btn">Save</button>
+                    <button type="button" class="btn btn-default1" data-dismiss="modal">Cancel</button>
+                </div>
+            </form>
+            </div>
+        </div>
+    
+   </div>
+    <div id="kycSubmit" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body text-center">
+                    <h5>Are you sure you want to submit ?</h5>
+                </div>
+                <div class="modal-footer text-center">
+                    <button type="button" onclick="getAllKYCData()" class="btn btn-success">Yes</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                </div>
+            </div>
+        </div>
+   </div>
+   <div id="groupAccounts" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                Accounts
+            </div>
+            <div class="modal-body">
+                <div class="groupAccount-modal">
+                    <div class="input-icons">
+                        <i class="fa fa-search"></i>
+                        <input class="input-field" id="searchValue" autocomplete="off" type="text"  placeholder="Search Account..">
+                    </div>
+                    <div class="groupAccountList" style="margin-top: 3%;">
+                        
+                        
+
+                            
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="modal-footer text-right">
+                <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+   <div id="contacts" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                Contacts
+            </div>
+            <div class="modal-body">
+                <div class="contact-modal">
+                    <div class="input-icons">
+                        <i class="fa fa-search"></i>
+                        <input class="input-field" autocomplete="off" id="searchValue" type="text"  placeholder="Search Contact...">
+                    </div>
+
+                <ul id="contactList"></ul>
+                </div>
+            </div>
+            <div class="modal-footer text-right">
+                <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- State List Modal -->
+<div id="stateList" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="text-cente modal-title">List of States </h4>
+            </div>
+            <div class="modal-body">
+                <div class="search-bar text-center">
+                    <input type="text" placeholder="Search State Name ...." onkeyup="handleStateSearch(this)" class="form-control" id="search-state">
+                    <!-- <button class="cluster-search"><i class="fa fa-search"></i></button> -->
+                </div>
+                
+                <div class="clusters" id="listOfStates"> 
+
+                </div>
+            </div>
+            <div class="modal-footer text-center">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- State List Modal -->
+    <footer class="bottom-nav mdl-layout--fixed-header">
+                <div class="nav-img">
+                    <img src="/media/images/homePage/rsz_icons-07.png" alt="">
+                </div>
+                <div class="nav-img">
+                    <img src="/media/images/homePage/rsz_icons-08.png" alt="">
+                </div>
+                <div class="nav-img">
+                    <img src="/media/images/homePage/rsz_icons-09.png" alt="">
+                </div>
+                <div class="nav-img">
+                    <img src="/media/images/homePage/rsz_icons-10.png" alt="">
+                </div>
+            </footer>
+
+    </div>
+    <!--Script imported-->
+    
+    <script src="/view/globalJS/jquery-3.4.1.min.js"></script>
+    
+
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script> -->
+            <script src="/view/globalJS/bootstrap.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
+                integrity="sha256-NXRS8qVcmZ3dOv3LziwznUHPegFhPZ1F/4inU7uC8h0=" crossorigin="anonymous"></script>
+            <script src="../../globalJS/main.js"></script>
+            <script src="/view/accountDetail/accountDetailUtility/utility.js"></script>
+    <script src="picklistUtility.js"></script>
+     
+    <script src="kycDetail.js"></script>
+    <!--Backend Scripts-->
+    <script src="/controller/indexedDB/idb.js"></script>
+    <script src="/controller/indexedDB/utility.js"></script>
+    <script src="/controller/sync/sync.js"></script>
+    <script src="/controller/objectives/kycDetail.js"></script>
+    <script src="/controller/globalJS/globalJS.js"></script>
+    <!--Backend Scripts-->
+    <!--Script imported-->
+</body>
+
+</html>

@@ -1,0 +1,425 @@
+.panel-content {
+  margin: 57px 0 0;
+}
+
+.main-head {
+  width: 100%;
+  margin:  0;
+  padding:  0;
+}
+
+.accountList {
+  position: fixed;
+  background: white;
+  width: 100%;
+  left: 0;
+  padding: 0 15px;
+  z-index: 9;
+}
+
+.heading-tag{
+  margin-top: 90px;
+}
+
+.heading {
+  width: 58%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.heading span {
+  position: relative;
+  top: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ed2228;
+}
+
+.heading img {
+  width: 40px;
+}
+
+.heading .about {
+  font-size: 15px;
+  color: #777777;
+  font-weight: 500;
+}
+
+.main-head p {
+  color: #777777;
+}
+
+.feat {
+  width: 40%;
+  display: inline-block;
+    text-align: right;
+}
+
+.feat span {
+  width: 24%;
+  display: inline-block;
+  margin: 3px;
+  margin-top: 0;
+  text-align: center;
+}
+
+
+
+.feat .name {
+  /* background-color: #ed2228; */
+  color: #000;
+  border-radius: 7px;
+}
+
+.feat span img {
+  width: 30px;
+}
+
+.form-group select{
+  width: 50%;
+  margin: auto;
+  border: 1px solid #ed2228;
+}
+
+.button {
+  background-color: #ed2228;
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+  margin: 4px 2px;
+}
+
+.button5 {border-radius: 50%;}
+
+.btn-section {
+  margin: 15px;
+  
+}
+
+form.example input[type=text] {
+  padding: 5px;
+  font-size: 16px;
+  border: 2px solid rgb(167, 164, 164);
+  float: left;
+  width: 100%;
+  color: rgb(167, 164, 164);
+  background: #fff;
+  margin-bottom: 15px;
+}
+
+table#listOfProduct{
+    width: 100%;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+table#listOfProduct tr{
+    border-bottom: 1px solid #ccc;
+}
+
+table#listOfProduct td{
+    color: blue;
+}
+
+ul#listOfProduct {
+  list-style: none;
+  padding: 0;
+  line-height: 20px;
+}
+
+#listOfProduct li{
+  margin: 10px;
+}
+
+.modal-header{
+    background-color: #ed2228;
+    color: #fff;
+    font-weight: 600;
+}
+
+#listOfItem .item-content,#listOfSummaryProd .item-content{
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px 0;
+}
+
+.item{
+    margin: 20px 0;
+}
+
+#listOfItem .item-quantity, #listOfSummaryProd .item-quantity{
+    width: 48%;
+    display: inline-block;
+    text-align: right;
+}
+/* 
+.item-quantity input{
+    width: 45%;
+    text-align: center;
+    border: none;
+    display: inline-block;
+} */
+
+.cases,.bottles{
+    border:2px solid #ed2228;
+    color: #000;
+    margin: 10px 0;
+}
+
+.item-content img{
+    width: 4rem;
+    height: 8rem;
+    display: inline-block;
+
+}
+.item-content .desp{
+    width: 75%;
+    display: inline-block;
+}
+
+.item-quantity .dec,.item-quantity .inc{
+    width: 25%;
+    display: inline-block;
+    padding: 5px;
+}
+
+.total-quantity{
+    width: 25%;
+    display: inline-block;
+    padding: 5px;
+    text-align: right;
+}
+h4{
+  color: #000;
+  margin: 15px 0;
+}
+.btn-default{
+    background-color: #ed2228;
+    color: #fff;
+    font-weight: 600;
+}
+
+.btn-section {
+    position: fixed;
+    bottom: 83px !important;
+    width: 100%;
+}
+
+.checkout-btn{
+  padding-top: 5%;
+    text-align: right;
+        margin-right: 30px;
+}
+
+div#products {
+  height: 400px;
+  overflow: scroll;
+}
+
+
+
+
+#app {
+  position: relative;
+  margin-bottom: 29%;
+}
+#listOfItem{
+  min-height: 18rem;
+  padding-bottom: 13%;
+}
+
+
+/*   Sales Order  */
+
+
+.row1 {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.container1 {
+  background-color: #f2f2f205;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+.inputSummary input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.label1 {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.btn1 {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn1:hover {
+  background-color: #45a049;
+}
+
+a {
+  color: #2196F3;
+}
+
+hr {
+  border: 1px solid lightgrey;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+@media (max-width: 800px) {
+  .row1 {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}
+
+#salesOrderSubmit .modal-dialog{
+  transform: translateY(100%);
+}
+
+#salesOrderSubmit .modal-header{
+  background-color: #fff;
+}
+
+.button-container {
+  height: 2.6rem;
+  border: 1px solid;
+  /* width: 80%; */
+  max-width: 168px;
+  border-radius: 6px;
+  margin: auto;
+}
+
+.qty{
+	width:60%;
+	text-align:center;
+	background : #fbd6dd;
+	border: 0px solid #000;
+	border-right: none;
+	border-left: none;
+	height: 100%;
+	color:#000;
+	font-size:14px;
+}
+
+@supports (-webkit-touch-callout: none) { 
+  .qty{
+    position: relative;
+    top:-2px;
+    height: 96%;
+    border-radius: 0;
+
+  }
+}
+@media only screen and (min-device-width : 375px) and (max-device-width : 812px) and (-webkit-device-pixel-ratio : 3) and (orientation : portrait) { 
+  .qty{
+    position: relative;
+    top:-2px;
+    height: 96%;
+    border-radius: 0;
+  }
+}
+
+
+.cart-btn{
+	width: 20%;
+    background: transparent;
+    box-shadow: 0 0 0 transparent;
+    border: 0px solid #000;
+    height: 100%;
+	color: red;
+}
+
+.cart-qty-minus{
+	position:relative;
+	/* right:-4px; */
+	border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+	border-right: none;
+}
+
+.cart-qty-plus{
+	border-left: none;
+	position:relative;
+	/* left:-5px; */
+	border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+input[type=number] {
+  -moz-appearance:textfield;
+}
+
+.showError{
+  color: red;
+  display: none;
+}
+.modal-body{
+  max-height: calc(100vh - 212px);
+  overflow-y: auto;
+}

@@ -1,0 +1,1858 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BIRA91</title>
+    <!--Manifest-->
+    <link rel="manifest" href="/manifest.json">
+    <!--Manifest-->
+
+
+    <!--Imported Design library-->
+
+    <!--Bootstrap-->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>-->
+    <!--Bootstrap-->
+    <!--Imported Design library-->
+
+    <!--Imported link for App for Apple-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="BIRA91">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-57x57.png" sizes="57x57">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-60x60.png" sizes="60x60">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-72x72.png" sizes="72x72">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-76x76.png" sizes="76x76">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-114x114.png" sizes="114x114">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-120x120.png" sizes="120x120">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-152x152.png" sizes="152x152">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-180x180.png" sizes="180x180">
+    <meta name="msapplication-TileImage" content="/media/icons/manifest2/app-icon-48x48.png">
+    <meta name="msapplication-TileColor" content="#fff">
+    <meta name="theme-color" content="#3f51b5">
+    <!--Imported link for App for Apple and android-->
+
+    <!--Fontawesome CDN-->
+    <!--Front end imports-->
+    <link rel="stylesheet" href="/view/globalCSS/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+        integrity="sha256-UK1EiopXIL+KVhfbFa8xrmAWPeBjMVdvYMYkTAEv/HI=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
+        integrity="sha256-4hqlsNP9KM6+2eA8VUT0kk4RsMRTeS7QGHIM+MZ5sLY=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/view/globalCSS/inhousestyle.css" />
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/browser-image-compression@latest/dist/browser-image-compression.js"></script>
+    <link rel="stylesheet" href="competitionInsights.css" />
+    <!--Front end imports-->
+    <style>
+        .slider {
+            top: 3px;
+        }
+
+        .On-Premise .Off-Premise {
+            margin: 4px 0;
+        }
+
+        .media-body {
+            padding-bottom: 9%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <nav class="navbar navbar-default nav-custom navbar-fixed-top">
+            <div class="container-fluid">
+                <header class="index-header">
+                    <div class="toggle-btn text-left" onclick="openNav()">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                    <div class="logoSection nav-logo text-left">
+                        <h3>Beast <span id=userName></span></h3>
+                    </div>
+                    <div class="dropdown-toggle showDropdown" data-toggle="dropdown">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li><a onclick="handlePageRedirect('Home')">Home</a></li>
+                        <li><a onclick="handlePageRedirect('Detail')">Detail</a></li>
+                        <li><a onclick="handlePageRedirect('Media')">Media</a></li>
+                        <li><a onclick="handlePageRedirect('Related')">Related</a></li>
+                    </ul>
+                </header>
+            </div>
+        </nav>
+        <div id="backdraw">
+            <div id="sideNav" class="sidenav">
+                <div class="logo-nav">
+                    <img src="/media/icons/logo/Icons-12.png" class="img-responsive" alt="">
+                </div>
+                <a href="/view/homePage/homePage.html"><i class="fas fa-home"></i>Home</a>
+                <a href="/view/accountList/accountListView.html"><i class="fas fa-tv"></i>Account</a>
+                <a href="#"><i class="fas fa-clipboard-list"></i>Lead</a>
+                <a href="/view/calendar/calendar2.html"><i class="far fa-calendar-alt"></i>Calendar</a>
+
+                <div class="bottom-sidenav">
+                    <a href="/view/syncPage/loadingPage.html"><i class="fas fa-sync"></i>SYNC</a>
+                    <a href="#" data-toggle="modal" data-target="#logoutModal"><i
+                            class="fas fa-sign-out-alt"></i>LOGOUT</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+
+                    <div class="account-section">
+                        <div class="panel-content" id="listOfAcc">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div id="promotionDashboard" class="competitorDashboard">
+                        
+                    </div>
+                </div>
+
+                <div class="col-xs-12">
+                    <div class="competition-heading text-center">
+                        <h5>Competitor Promotions</h5>
+                        <br/><br/>
+                    </div>
+                </div>
+                <!-- <div class="col-xs-12" id="InsightPanel">
+                    <div class="media">
+                        <div class="media-body">
+                            <h4 class="media-heading">UB</h4>
+                            <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Food Combo
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Food_Combo" class="UB"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group UB-Food_Combo" style="display: none;">
+                                        <label for="0-Food_Combo_File">
+                                            <i class="fa fa-camera 0-Food_Combo_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="0-Food_Combo_File" lang="Food_Combo_File"  onchange="fileInput(this)"  capture="camera"   accept="image/*" type="file"/>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Special Price
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Special_Price" class="UB"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group UB-Special_Price" style="display: none;">
+                                        <label for="0-Special_Price_File">
+                                            <i class="fa fa-camera 0-Special_Price_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="0-Special_Price_File" lang="Special_Price_File"  onchange="fileInput(this)" capture="camera"    accept="image/*" type="file"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Exclusive Events
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Exclusive_Events" class="UB"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group UB-Exclusive_Events" style="display: none;">
+                                        <label for="0-Exclusive_Events_File">
+                                            <i class="fa fa-camera 0-Exclusive_Events_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="0-Exclusive_Events_File" lang="Exclusive_Events_File"  onchange="fileInput(this)" capture="camera"    accept="image/*" type="file"/>
+                                    </div>
+                                </div>
+</div>
+                                <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Gift With Purchase
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Gift_with_Purchase" class="UB"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group UB-Gift_with_Purchase" style="display: none;">
+                                        <label for="0-Gift_with_Purchase_File">
+                                            <i class="fa fa-camera 0-Gift_with_Purchase_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="0-Gift_with_Purchase_File" lang="Gift_with_Purchase_File"  onchange="fileInput(this)" capture="camera"    accept="image/*" type="file"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Cocktail Promotions
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Cocktail_Led_Promotion" class="UB"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group UB-Cocktail_Led_Promotion" style="display: none;">
+                                        <label for="0-Cocktail_Led_Promotion_File">
+                                            <i class="fa fa-camera 0-Cocktail_Led_Promotion_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="0-Cocktail_Led_Promotion_File" lang="Cocktail_Led_Promotion_File"  onchange="fileInput(this)" capture="camera"    accept="image/*" type="file"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 Off-Premise">
+                                    Gift With Purchase
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Gift_with_Purchase" class="UB"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <div class="image-upload form-group UB-Cocktail_Led_Promotion" style="display: none;">
+                                        <label for="0-Cocktail_Led_Promotion_File">
+                                            <i class="fa fa-camera 0-Cocktail_Led_Promotion_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="0-Cocktail_Led_Promotion_File" lang="Cocktail_Led_Promotion_File"  onchange="fileInput(this)"  capture="camera"   accept="image/*" type="file"/>
+                                    </div>
+                                </div>
+</div>
+                                <div class="row">
+                                <div class="col-xs-4 Off-Premise">
+                                    Cash Back
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Cashback" class="UB"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <div class="image-upload form-group UB-Cashback" style="display: none;">
+                                        <label for="0-Cashback_File">
+                                            <i class="fa fa-camera 0-Cashback_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="0-Cashback_File" lang="Cashback_File"  onchange="fileInput(this)" capture="camera"   accept="image/*" type="file"/>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="row">
+                                <div class="col-xs-4 Off-Premise">
+                                    Sweepstakes
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Sweepstakess" class="UB"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <div class="image-upload form-group UB-Sweepstakess" style="display: none;">
+                                        <label for="0-Sweepstakess_File">
+                                            <i class="fa fa-camera 0-Sweepstakess_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="0-Sweepstakess_File" lang="Sweepstakess_File"  onchange="fileInput(this)" capture="camera"    accept="image/*" type="file"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                    <div class="media">
+                        <div class="media-body">
+                            <h4 class="media-heading">ABI</h4>
+                            <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Food Combo
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Food_Combo" class="ABI"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group ABI-Food_Combo" style="display: none;">
+                                        <label for="1-Food_Combo_File">
+                                            <i class="fa fa-camera 1-Food_Combo_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="1-Food_Combo_File" lang="Food_Combo_File"  onchange="fileInput(this)"  capture="camera"   accept="image/*" type="file"/>
+                                    </div>
+                                </div>
+</div>
+                                <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Special Price
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Special_Price" class="ABI"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group ABI-Special_Price" style="display: none;">
+                                        <label for="1-Special_Price_File">
+                                            <i class="fa fa-camera 1-Special_Price_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="1-Special_Price_File" lang="Special_Price_File"  onchange="fileInput(this)"  capture="camera"   accept="image/*" type="file"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Exclusive Events
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Exclusive_Events" class="ABI"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group ABI-Exclusive_Events" style="display: none;">
+                                        <label for="1-Exclusive_Events_File">
+                                            <i class="fa fa-camera 1-Exclusive_Events_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="1-Exclusive_Events_File" lang="Exclusive_Events_File"  onchange="fileInput(this)" capture="camera"    accept="image/*" type="file"/>
+                                    </div>
+                                </div>
+</div>
+                                <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Gift With Purchase
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Gift_with_Purchase" class="ABI"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group ABI-Gift_with_Purchase" style="display: none;">
+                                        <label for="1-Gift_with_Purchase_File">
+                                            <i class="fa fa-camera 1-Gift_with_Purchase_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="1-Gift_with_Purchase_File" lang="Gift_with_Purchase_File"  onchange="fileInput(this)" capture="camera"  accept="image/*" type="file"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Cocktail Promotions
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Cocktail_Led_Promotion" class="ABI"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group ABI-Cocktail_Led_Promotion" style="display: none;">
+                                        <label for="1-Cocktail_Led_Promotion_File">
+                                            <i class="fa fa-camera 1-Cocktail_Led_Promotion_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="1-Cocktail_Led_Promotion_File" lang="Cocktail_Led_Promotion_File"  onchange="fileInput(this)" capture="camera"    accept="image/*" type="file"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 Off-Premise">
+                                    Gift With Purchase
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Gift_with_Purchase" class="ABI"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <div class="image-upload form-group ABI-Cocktail_Led_Promotion" style="display: none;">
+                                        <label for="1-Cocktail_Led_Promotion_File">
+                                            <i class="fa fa-camera 1-Cocktail_Led_Promotion_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="1-Cocktail_Led_Promotion_File" lang="Cocktail_Led_Promotion_File"  onchange="fileInput(this)"  capture="camera"   accept="image/*" type="file"/>
+                                    </div>
+                                </div>
+</div>
+                                <div class="row">
+                                <div class="col-xs-4 Off-Premise">
+                                    Cash Back
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Cashback" class="ABI"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <div class="image-upload form-group ABI-Cashback" style="display: none;">
+                                        <label for="1-Cashback_File">
+                                            <i class="fa fa-camera 1-Cashback_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="1-Cashback_File" lang="Cashback_File"  onchange="fileInput(this)" capture="camera"    accept="image/*" type="file"/>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="row">
+                                <div class="col-xs-4 Off-Premise">
+                                    Sweepstakes
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Sweepstakess" class="ABI"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <div class="image-upload form-group ABI-Sweepstakess" style="display: none;">
+                                        <label for="1-Sweepstakess_File">
+                                            <i class="fa fa-camera 1-Sweepstakess_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="1-Sweepstakess_File" lang="Sweepstakess_File"  onchange="fileInput(this)"  capture="camera"   accept="image/*"   type="file"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-body">
+                            <h4 class="media-heading">Carlsberg</h4>
+                            <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Food Combo
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Food_Combo" class="Carlsberg"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group Carlsberg-Food_Combo" style="display: none;">
+                                        <label for="2-Food_Combo_File">
+                                            <i class="fa fa-camera 2-Food_Combo_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="2-Food_Combo_File" lang="Food_Combo_File"  onchange="fileInput(this)"    accept="image/*" capture="camera"  type="file"/>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Special Price
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Special_Price" class="Carlsberg"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group Carlsberg-Special_Price" style="display: none;">
+                                        <label for="2-Special_Price_File">
+                                            <i class="fa fa-camera 2-Special_Price_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="2-Special_Price_File" lang="Special_Price_File"  onchange="fileInput(this)"    accept="image/*" capture="camera"  type="file"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Exclusive Events
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Exclusive_Events" class="Carlsberg"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group Carlsberg-Exclusive_Events" style="display: none;">
+                                        <label for="2-Exclusive_Events_File">
+                                            <i class="fa fa-camera 2-Exclusive_Events_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="2-Exclusive_Events_File" lang="Exclusive_Events_File"  onchange="fileInput(this)"    accept="image/*"    capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Gift With Purchase
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Gift_with_Purchase" class="Carlsberg"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group Carlsberg-Gift_with_Purchase" style="display: none;">
+                                        <label for="2-Gift_with_Purchase_File">
+                                            <i class="fa fa-camera 2-Gift_with_Purchase_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="2-Gift_with_Purchase_File" lang="Gift_with_Purchase_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Cocktail Promotions
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Cocktail_Led_Promotion" class="Carlsberg"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group Carlsberg-Cocktail_Led_Promotion" style="display: none;">
+                                        <label for="2-Cocktail_Led_Promotion_File">
+                                            <i class="fa fa-camera 2-Cocktail_Led_Promotion_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="2-Cocktail_Led_Promotion_File" lang="Cocktail_Led_Promotion_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 Off-Premise">
+                                    Gift With Purchase
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Gift_with_Purchase" class="Carlsberg"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <div class="image-upload form-group Carlsberg-Gift_with_Purchase" style="display: none;">
+                                        <label for="2-Gift_with_Purchase_File">
+                                            <i class="fa fa-camera 2-Gift_with_Purchase_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="2-Cocktail_Led_Promotion_File" lang="Cocktail_Led_Promotion_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="row">
+                                <div class="col-xs-4 Off-Premise">
+                                    Cash Back
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Cashback" class="Carlsberg"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <div class="image-upload form-group Carlsberg-Cashback" style="display: none;">
+                                        <label for="2-Cashback_File">
+                                            <i class="fa fa-camera 2-Cashback_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="2-Cashback_File" lang="Cashback_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="row">
+                                <div class="col-xs-4 Off-Premise">
+                                    Sweepstakes
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Sweepstakess" class="Carlsberg"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <div class="image-upload form-group Carlsberg-Sweepstakess" style="display: none;">
+                                        <label for="2-Sweepstakess_File">
+                                            <i class="fa fa-camera 2-Sweepstakess_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="2-Sweepstakess_File" lang="Sweepstakess_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-bdy">
+                            <h4 class="media-heading" style="font-size: 18px;">Craft</h4>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="media">
+                        <div class="media-body">
+                            <h4 class="media-heading">White Owl</h4>
+                            <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Food Combo
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Food_Combo" class="White Owl"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group White Owl-Food_Combo" style="display: none;">
+                                        <label for="4-Food_Combo_File">
+                                            <i class="fa fa-camera 4-Food_Combo_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="4-Food_Combo_File" lang="Food_Combo_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+</div>
+                                <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Special Price
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Special_Price" class="White Owl"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group White Owl-Special_Price" style="display: none;">
+                                        <label for="4-Special_Price_File">
+                                            <i class="fa fa-camera 4-Special_Price_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="4-Special_Price_File" lang="Special_Price_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Exclusive Events
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Exclusive_Events" class="White Owl"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group White Owl-Exclusive_Events" style="display: none;">
+                                        <label for="4-Exclusive_Events_File">
+                                            <i class="fa fa-camera 4-Exclusive_Events_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="4-Exclusive_Events_File" lang="Exclusive_Events_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+</div>
+                                <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Gift With Purchase
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Gift_with_Purchase" class="White Owl"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group White Owl-Gift_with_Purchase" style="display: none;">
+                                        <label for="4-Gift_with_Purchase_File">
+                                            <i class="fa fa-camera 4-Gift_with_Purchase_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="4-Gift_with_Purchase_File" lang="Gift_with_Purchase_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Cocktail Promotions
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Cocktail_Led_Promotion" class="White Owl"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group White Owl-Cocktail_Led_Promotion" style="display: none;">
+                                        <label for="4-Cocktail_Led_Promotion_File">
+                                            <i class="fa fa-camera 4-Cocktail_Led_Promotion_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="4-Cocktail_Led_Promotion_File" lang="Cocktail_Led_Promotion_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 Off-Premise">
+                                    Gift With Purchase
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Gift_with_Purchase" class="White Owl"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <div class="image-upload form-group White Owl-Cocktail_Led_Promotion" style="display: none;">
+                                        <label for="4-Cocktail_Led_Promotion_File">
+                                            <i class="fa fa-camera 4-Cocktail_Led_Promotion_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="4-Cocktail_Led_Promotion_File" lang="Cocktail_Led_Promotion_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+</div>
+                                <div class="row">
+                                <div class="col-xs-4 Off-Premise">
+                                    Cash Back
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Cashback" class="White Owl"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <div class="image-upload form-group White Owl-Cashback" style="display: none;">
+                                        <label for="4-Cashback_File">
+                                            <i class="fa fa-camera 4-Cashback_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="4-Cashback_File" lang="Cashback_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="row">
+                                <div class="col-xs-4 Off-Premise">
+                                    Sweepstakes
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Sweepstakess" class="White Owl"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <div class="image-upload form-group White Owl-Sweepstakess" style="display: none;">
+                                        <label for="4-Sweepstakess_File">
+                                            <i class="fa fa-camera 4-Sweepstakess_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="4-Sweepstakess_File" lang="Sweepstakess_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-body">
+                            <h4 class="media-heading">Simba</h4>
+                            <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Food Combo
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Food_Combo" class="Simba"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group Simba-Food_Combo" style="display: none;">
+                                        <label for="5-Food_Combo_File">
+                                            <i class="fa fa-camera 5-Food_Combo_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="5-Food_Combo_File" lang="Food_Combo_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+</div>
+                                <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Special Price
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Special_Price" class="Simba"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group Simba-Special_Price" style="display: none;">
+                                        <label for="5-Special_Price_File">
+                                            <i class="fa fa-camera 5-Special_Price_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="5-Special_Price_File" lang="Special_Price_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Exclusive Events
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Exclusive_Events" class="Simba"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group Simba-Exclusive_Events" style="display: none;">
+                                        <label for="5-Exclusive_Events_File">
+                                            <i class="fa fa-camera 5-Exclusive_Events_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="5-Exclusive_Events_File" lang="Exclusive_Events_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+</div>
+                                <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Gift With Purchase
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Gift_with_Purchase" class="Simba"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group Simba-Gift_with_Purchase" style="display: none;">
+                                        <label for="5-Gift_with_Purchase_File">
+                                            <i class="fa fa-camera 5-Gift_with_Purchase_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="5-Gift_with_Purchase_File" lang="Gift_with_Purchase_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Cocktail Promotions
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Cocktail_Led_Promotion" class="Simba"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group Simba-Cocktail_Led_Promotion" style="display: none;">
+                                        <label for="5-Cocktail_Led_Promotion_File">
+                                            <i class="fa fa-camera 5-Cocktail_Led_Promotion_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="5-Cocktail_Led_Promotion_File" lang="Cocktail_Led_Promotion_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 Off-Premise">
+                                    Gift With Purchase
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Gift_with_Purchase" class="Simba"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <div class="image-upload form-group Simba-Gift_with_Purchase" style="display: none;">
+                                        <label for="5-Gift_with_Purchase_File">
+                                            <i class="fa fa-camera 5-Gift_with_Purchase_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="5-Cocktail_Led_Promotion_File" lang="Cocktail_Led_Promotion_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+</div>
+                                <div class="row">
+                                <div class="col-xs-4 Off-Premise">
+                                    Cash Back
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Cashback" class="Simba"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <div class="image-upload form-group Simba-Cashback" style="display: none;">
+                                        <label for="5-Cashback_File">
+                                            <i class="fa fa-camera 5-Cashback_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="5-Cashback_File" lang="Cashback_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="row">
+                                <div class="col-xs-4 Off-Premise">
+                                    Sweepstakes
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Sweepstakess" class="Simba"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <div class="image-upload form-group Simba-Sweepstakess" style="display: none;">
+                                        <label for="5-Sweepstakess_File">
+                                            <i class="fa fa-camera 5-Sweepstakess_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="5-Sweepstakess_File" lang="Sweepstakess_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-body">
+                            <h4 class="media-heading">White Rhino</h4>
+                            <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Food Combo
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Food_Combo" class="White Rhino"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group White Rhino-Food_Combo" style="display: none;">
+                                        <label for="6-Food_Combo_File">
+                                            <i class="fa fa-camera 6-Food_Combo_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="6-Food_Combo_File" lang="Food_Combo_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+</div>
+                                <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Special Price
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Special_Price" class="White Rhino"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group White Rhino-Special_Price" style="display: none;">
+                                        <label for="6-Special_Price_File">
+                                            <i class="fa fa-camera 6-Special_Price_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="6-Special_Price_File" lang="Special_Price_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Exclusive Events
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Exclusive_Events" class="White Rhino"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group White Rhino-Exclusive_Events" style="display: none;">
+                                        <label for="6-Exclusive_Events_File">
+                                            <i class="fa fa-camera 6-Exclusive_Events_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="6-Exclusive_Events_File" lang="Exclusive_Events_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+</div>
+                                <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Gift With Purchase
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Gift_with_Purchase" class="White Rhino"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group White Rhino-Gift_with_Purchase" style="display: none;">
+                                        <label for="6-Gift_with_Purchase_File">
+                                            <i class="fa fa-camera 6-Gift_with_Purchase_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="6-Gift_with_Purchase_File" lang="Gift_with_Purchase_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Cocktail Promotions
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Cocktail_Led_Promotion" class="White Rhino"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group White Rhino-Cocktail_Led_Promotion" style="display: none;">
+                                        <label for="6-Cocktail_Led_Promotion_File">
+                                            <i class="fa fa-camera 6-Cocktail_Led_Promotion_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="6-Cocktail_Led_Promotion_File" lang="Cocktail_Led_Promotion_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 Off-Premise">
+                                    Gift With Purchase
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Gift_with_Purchase" class="White Rhino"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <div class="image-upload form-group White Rhino-Cocktail_Led_Promotion" style="display: none;">
+                                        <label for="6-Cocktail_Led_Promotion_File">
+                                            <i class="fa fa-camera 6-Cocktail_Led_Promotion_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="6-Cocktail_Led_Promotion_File" lang="Cocktail_Led_Promotion_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+</div>
+                                <div class="row">
+                                <div class="col-xs-4 Off-Premise">
+                                    Cash Back
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Cashback" class="White Rhino"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <div class="image-upload form-group White Rhino-Cashback" style="display: none;">
+                                        <label for="6-Cashback_File">
+                                            <i class="fa fa-camera 6-Cashback_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="6-Cashback_File" lang="Cashback_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="row">
+                                <div class="col-xs-4 Off-Premise">
+                                    Sweepstakes
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Sweepstakess" class="White Rhino"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <div class="image-upload form-group White Rhino-Sweepstakess" style="display: none;">
+                                        <label for="6-Sweepstakess_File">
+                                            <i class="fa fa-camera 6-Sweepstakess_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="6-Sweepstakess_File" lang="Sweepstakess_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-body">
+                            <h4 class="media-heading">Hopper</h4>
+                            <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Food Combo
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Food_Combo" class="Hopper"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group Hopper-Food_Combo" style="display: none;">
+                                        <label for="7-Food_Combo_File">
+                                            <i class="fa fa-camera 7-Food_Combo_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="7-Food_Combo_File" lang="Food_Combo_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Special Price
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Special_Price" class="Hopper"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group Hopper-Special_Price" style="display: none;">
+                                        <label for="7-Special_Price_File">
+                                            <i class="fa fa-camera 7-Special_Price_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="7-Special_Price_File" lang="Special_Price_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Exclusive Events
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Exclusive_Events" class="Hopper"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group Hopper-Exclusive_Events" style="display: none;">
+                                        <label for="7-Exclusive_Events_File">
+                                            <i class="fa fa-camera 7-Exclusive_Events_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="7-Exclusive_Events_File" lang="Exclusive_Events_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Gift With Purchase
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Gift_with_Purchase" class="Hopper"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group Hopper-Gift_with_Purchase" style="display: none;">
+                                        <label for="7-Gift_with_Purchase_File">
+                                            <i class="fa fa-camera 7-Gift_with_Purchase_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="7-Gift_with_Purchase_File" lang="Gift_with_Purchase_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Cocktail Promotions
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Cocktail_Led_Promotion" class="Hopper"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group Hopper-Cocktail_Led_Promotion" style="display: none;">
+                                        <label for="7-Cocktail_Led_Promotion_File">
+                                            <i class="fa fa-camera 7-Cocktail_Led_Promotion_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="7-Cocktail_Led_Promotion_File" lang="Cocktail_Led_Promotion_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 Off-Premise">
+                                    Gift With Purchase
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Gift_with_Purchase" class="Hopper"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <div class="image-upload form-group Hopper-Cocktail_Led_Promotion" style="display: none;">
+                                        <label for="7-Cocktail_Led_Promotion_File">
+                                            <i class="fa fa-camera 7-Cocktail_Led_Promotion_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="7-Cocktail_Led_Promotion_File" lang="Cocktail_Led_Promotion_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="row">
+                                <div class="col-xs-4 Off-Premise">
+                                    Cash Back
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Cashback" class="Hopper"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <div class="image-upload form-group Hopper-Cashback" style="display: none;">
+                                        <label for="7-Cashback_File">
+                                            <i class="fa fa-camera 7-Cashback_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="7-Cashback_File" lang="Cashback_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="row">
+                                <div class="col-xs-4 Off-Premise">
+                                    Sweepstakes
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Sweepstakess" class="Hopper"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <div class="image-upload form-group Hopper-Sweepstakess" style="display: none;">
+                                        <label for="7-Sweepstakess_File">
+                                            <i class="fa fa-camera 7-Sweepstakess_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="7-Sweepstakess_File" lang="Sweepstakess_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-body">
+                            <h4 class="media-heading">Witlinger</h4>
+                            <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Food Combo
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Food_Combo" class="Witlinger"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group Witlinger-Food_Combo" style="display: none;">
+                                        <label for="8-Food_Combo_File">
+                                            <i class="fa fa-camera 8-Food_Combo_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="8-Food_Combo_File" lang="Food_Combo_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="row">
+
+                                <div class="col-xs-4 On-Premise">
+                                    Special Price
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Special_Price" class="Witlinger"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group Witlinger-Special_Price" style="display: none;">
+                                        <label for="8-Special_Price_File">
+                                            <i class="fa fa-camera 8-Special_Price_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="8-Special_Price_File" lang="Special_Price_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Exclusive Events
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Exclusive_Events" class="Witlinger"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group Witlinger-Exclusive_Events" style="display: none;">
+                                        <label for="8-Exclusive_Events_File">
+                                            <i class="fa fa-camera 8-Exclusive_Events_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="8-Exclusive_Events_File" lang="Exclusive_Events_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Gift With Purchase
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Gift_with_Purchase" class="Witlinger"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group Witlinger-Gift_with_Purchase" style="display: none;">
+                                        <label for="8-Gift_with_Purchase_File">
+                                            <i class="fa fa-camera 8-Gift_with_Purchase_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="8-Gift_with_Purchase_File" lang="Gift_with_Purchase_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Cocktail Promotions
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Cocktail_Led_Promotion" class="Witlinger"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group Witlinger-Cocktail_Led_Promotion" style="display: none;">
+                                        <label for="8-Cocktail_Led_Promotion_File">
+                                            <i class="fa fa-camera 8-Cocktail_Led_Promotion_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="8-Cocktail_Led_Promotion_File" lang="Cocktail_Led_Promotion_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 Off-Premise">
+                                    Gift With Purchase
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Gift_with_Purchase" class="Witlinger"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <div class="image-upload form-group Witlinger-Cocktail_Led_Promotion" style="display: none;">
+                                        <label for="8-Cocktail_Led_Promotion_File">
+                                            <i class="fa fa-camera 8-Cocktail_Led_Promotion_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="8-Cocktail_Led_Promotion_File" lang="Cocktail_Led_Promotion_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="row">
+                                <div class="col-xs-4 Off-Premise">
+                                    Cash Back
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Cashback" class="Witlinger"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <div class="image-upload form-group Witlinger-Cashback" style="display: none;">
+                                        <label for="8-Cashback_File">
+                                            <i class="fa fa-camera 8-Cashback_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="8-Cashback_File" lang="Cashback_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="row">
+                                <div class="col-xs-4 Off-Premise">
+                                    Sweepstakes
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Sweepstakess" class="Witlinger"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <div class="image-upload form-group Witlinger-Sweepstakess" style="display: none;">
+                                        <label for="8-Sweepstakess_File">
+                                            <i class="fa fa-camera 8-Sweepstakess_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="8-Sweepstakess_File" lang="Sweepstakess_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                    <div class="media">
+                        <div class="media-body">
+                            <h4 class="media-heading">Others</h4>
+                            <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Food Combo
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Food_Combo" class="Others"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group Others-Food_Combo" style="display: none;">
+                                        <label for="9-Food_Combo_File">
+                                            <i class="fa fa-camera 9-Food_Combo_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="9-Food_Combo_File" lang="Food_Combo_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Special Price
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Special_Price" class="Others"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group Others-Special_Price" style="display: none;">
+                                        <label for="9-Special_Price_File">
+                                            <i class="fa fa-camera 9-Special_Price_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="9-Special_Price_File" lang="Special_Price_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Exclusive Events
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Exclusive_Events" class="Others"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group Others-Exclusive_Events" style="display: none;">
+                                        <label for="9-Exclusive_Events_File">
+                                            <i class="fa fa-camera 9-Exclusive_Events_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="9-Exclusive_Events_File" lang="Exclusive_Events_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Gift With Purchase
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Gift_with_Purchase" class="Others"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group Others-Gift_with_Purchase" style="display: none;">
+                                        <label for="9-Gift_with_Purchase_File">
+                                            <i class="fa fa-camera 9-Gift_with_Purchase_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="9-Gift_with_Purchase_File" lang="Gift_with_Purchase_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 On-Premise">
+                                    Cocktail Promotions
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Cocktail_Led_Promotion" class="Others"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 On-Premise">
+                                    <div class="image-upload form-group Others-Cocktail_Led_Promotion" style="display: none;">
+                                        <label for="9-Cocktail_Led_Promotion_File">
+                                            <i class="fa fa-camera 9-Cocktail_Led_Promotion_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="9-Cocktail_Led_Promotion_File" lang="Cocktail_Led_Promotion_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 Off-Premise">
+                                    Gift With Purchase
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Gift_with_Purchase" class="Others"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <div class="image-upload form-group Others-Cocktail_Led_Promotion" style="display: none;">
+                                        <label for="9-Cocktail_Led_Promotion_File">
+                                            <i class="fa fa-camera 9-Cocktail_Led_Promotion_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="9-Cocktail_Led_Promotion_File" lang="Cocktail_Led_Promotion_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="row">
+                                <div class="col-xs-4 Off-Premise">
+                                    Cash Back
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Cashback" class="Others"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <div class="image-upload form-group Others-Cashback" style="display: none;">
+                                        <label for="9-Cashback_File">
+                                            <i class="fa fa-camera 9-Cashback_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="9-Cashback_File" lang="Cashback_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="row">
+                                <div class="col-xs-4 Off-Premise">
+                                    Sweepstakes
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Sweepstakess" class="Others"
+                                            onchange="checkBoxChangeHandler(this)">
+                                        <span class="slider round craft-switch"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-4 Off-Premise">
+                                    <div class="image-upload form-group Others-Sweepstakess" style="display: none;">
+                                        <label for="9-Sweepstakess_File">
+                                            <i class="fa fa-camera 9-Sweepstakess_File" aria-hidden="true"></i>
+                                            
+                                        </label>
+                                        <input id="9-Sweepstakess_File" lang="Sweepstakess_File"  onchange="fileInput(this)"    accept="image/*"  capture="camera"  type="file" />
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div> -->
+
+                <div id="InsightPanel" class="col-xs-12"></div>
+
+
+            </div>
+            
+            <div class="row">
+                <div class="col-xs-12">
+                    <button class="btn btn-default" style="width: 90%;" onclick="handleSubmit()">Save & Next</button>
+                </div>
+            </div>
+
+            <div id="competitorSubmit" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <h5>Are you sure you want to submit ?</h5>
+                        </div>
+                        <div class="modal-footer text-center">
+                            <button type="button" onclick="handleSubmitPromotions()"
+                                class="btn btn-success">Yes</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="showAlertmsg" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <h5></h5>
+                        </div>
+                        <div class="modal-footer text-center">
+                            
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+
+
+            <footer class="bottom-nav mdl-layout--fixed-header">
+                <div class="nav-img">
+                    <img src="/media/images/homePage/rsz_icons-07.png" alt="">
+                </div>
+                <div class="nav-img">
+                    <img src="/media/images/homePage/rsz_icons-08.png" alt="">
+                </div>
+                <div class="nav-img">
+                    <img src="/media/images/homePage/rsz_icons-09.png" alt="">
+                </div>
+                <div class="nav-img">
+                    <img src="/media/images/homePage/rsz_icons-10.png" alt="">
+                </div>
+            </footer>
+
+
+            <!--Script imported-->
+            <!-- Modal Popup for Image Error -->
+            <div id="showAlertmsg" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <h5></h5>
+                        </div>
+                        <div class="modal-footer text-right">
+                            
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal Popup for Image Error -->
+            <!--Front End script-->
+            <script src="/view/globalJS/jquery-3.4.1.min.js"></script>
+            <script src="/view/globalJS/bootstrap.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
+                integrity="sha256-NXRS8qVcmZ3dOv3LziwznUHPegFhPZ1F/4inU7uC8h0=" crossorigin="anonymous"></script>
+            <script src="/view/globalJS/main.js"></script>
+            <script src="/view/accountDetail/accountDetailUtility/utility.js"></script>
+            <script src="competitionInsightsPage3.js"></script>
+            <!--Front End script-->
+            <!--Backend Scripts-->
+            <script src="/controller/indexedDB/idb.js"></script>
+            <script src="/controller/indexedDB/utility.js"></script>
+            <script src="/controller/sync/sync.js"></script>
+            <script src="/controller/objectives/competitorInsights/competitorInsights3.js"></script>
+            <script src="/controller/globalJS/globalJS.js"></script>
+            <!--Backend Scripts-->
+            <!--Script imported-->
+
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+ 
+  .panel-content {
+    margin: 50px 0 0;
+    }
+    
+    .accountList {
+      position: fixed;
+      background: white;
+      width: 100%;
+      left: 0;
+      padding: 0 15px;
+      z-index: 10;
+    }
+    
+    
+    .main-head {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    }
+    
+    .heading {
+    width: 58%;
+    display: inline-block;
+    vertical-align: top;
+    }
+    
+    .heading span {
+    position: relative;
+    top: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ed2228;
+    }
+    
+    .heading img {
+    width: 40px;
+    }
+    
+    .heading .about {
+    font-size: 15px;
+    color: #777777;
+    font-weight: 500;
+    }
+    
+    .main-head p {
+    color: #777777;
+    }
+    
+    .feat {
+    width: 40%;
+    display: inline-block;
+      text-align: right;
+    }
+    
+    .feat span {
+    width: 24%;
+    display: inline-block;
+    margin: 3px;
+    margin-top: 0;
+    text-align: center;
+    }
+    
+    
+    
+    .feat .name {
+    /* background-color: #ed2228; */
+    color: #000;
+    border-radius: 7px;
+    }
+    
+    .feat span img {
+    width: 30px;
+    }
+   
+
+.objectives{
+    /* margin: 12rem 0; */
+    position: relative;
+    height: 90vh;
+    width: 100%;
+    top: 50px;
+}
+
+.obj{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+}
+
+.objective{
+  text-align: center;
+  color: #fff;
+  background-color: #ed2228;
+  margin: 30px auto;
+  border-radius: 15px;
+  display: block;
+  width: 250px;
+  border: 0;
+}
+
+.check{
+  text-align: center;
+}
+
+.check button{
+  display: inline-block;
+  background-color: #ed2228;
+  border-radius: 15px;
+  color: #fff;
+  padding: 12px 20px;
+  border: 0px;
+}

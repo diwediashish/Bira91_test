@@ -1,0 +1,537 @@
+/* Style the search field */
+form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 2px solid rgb(167, 164, 164);
+    float: left;
+    width: 80%;
+    color: rgb(167, 164, 164);
+    background: #fff;
+    border-radius: 20px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: none;
+}
+
+/* Style the submit button */
+form.example button {
+    float: left;
+    width: 15%;
+    padding: 10px;
+    background: #fff;
+    color: rgb(167, 164, 164);
+    font-size: 17px;
+    border: 2px solid rgb(167, 164, 164);
+    border-right: none;
+    cursor: pointer;
+    border-radius: 20px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+form.example button:hover {
+    background:transparent;
+}
+
+/* Clear floats */
+form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.example {
+    margin: 80px 0 0;
+    position: relative;
+    width: 85%;
+    display: inline-block;
+}
+
+#searchElement {
+    position: absolute;
+    top: 45px;
+    width: 93%;
+    padding: 0;
+    z-index: 9;
+}
+
+#searchElement li {
+    display: none;
+    list-style: none;
+    background: rgb(241, 234, 234);
+    padding: 10px;
+    border-bottom: 1px solid #000;
+}
+
+#searchElement li a {
+    color: #000000;
+    letter-spacing: 1px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+/* Accordion */
+
+.accordion {
+    color: #ed2228;
+    font-weight: 600;
+    letter-spacing: 1px;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    margin: 15px 0 0;
+    position: relative;
+}
+
+/* Filter */
+
+.filter-section {
+    width: 12%;
+    display: inline-block;
+    vertical-align: text-bottom;
+    margin-bottom: 5px;
+}
+
+.filter-section .filCom {
+    text-align: center;
+    font-size: 13px;
+    position: relative;
+}
+
+.filter-section .status {
+    width: 21%;
+}
+
+.filter-section .qco {
+    width: 13%;
+}
+
+.filter-section .segment {
+    width: 23%;
+}
+
+.panel {
+    /* padding: 0 18px; */
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+.nav-tabs>li {
+    float: inherit;
+}
+.panel-content {
+    padding: 0 0 0 0;
+    margin-top: 0;
+}
+
+.panel-content li {
+    list-style: none;
+    padding: 7px;
+    color: #777777;
+}
+
+.main-head {
+    width: 100%;
+    margin: 15px 0;
+}
+
+.heading {
+    width: 58%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.heading span {
+    position: relative;
+    top: 0px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ed2228;
+}
+
+.main-head .accountName {
+    position: relative;
+    top: 0px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ed2228;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    text-overflow: ellipsis
+}
+
+.heading img {
+    width: 40px;
+}
+
+.heading .about {
+    font-size: 15px;
+    color: #777777;
+    font-weight: 500;
+}
+
+.main-head p {
+    color: #777777;
+    margin-bottom: 0;
+}
+
+.feat {
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: right;
+}
+
+.feat span {
+    width: 23%;
+    display: inline-block;
+    margin: 5px;
+    margin-top: 0;
+    text-align: center;
+}
+
+.feat .name {
+    /* background-color: #ed2228; */
+    color: #000;
+    border-radius: 7px;
+}
+
+.feat span img {
+    width: 30px;
+}
+
+.filter-head {
+    width: 35%;
+    display: inline-block;
+    overflow-y: scroll;
+}
+
+.filter-content {
+    width: 64%;
+    display: inline-block;
+    /* background-color: #ccc; */
+    padding: 15px;
+    overflow-y: scroll;
+}
+
+.filter img{
+    display: inline-block;
+    width: 65px;
+}
+
+.modal-title {
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.modal-header {
+    padding: 10px;
+    border-bottom: 1px solid #e5e5e5;
+    background-color: #ed2228;
+}
+
+.modal-body {
+    padding: 0;
+    display: flex;
+    vertical-align: middle;
+    height: 400px;
+    overflow: scroll;
+}
+
+#applyFilter {
+    background-color: #ed2228;
+    color: #fff;
+    float: right;
+}
+
+#clearAll {
+    float: left;
+    width: 95px;
+}
+
+.nav-tabs {
+    border-bottom: 0px solid #ddd;
+    /* background-color: #ddd; */
+}
+
+.nav-tabs > li > a {
+    color: #ed2228;
+    font-weight: 600;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover {
+    background-color: transparent;
+    color: #000;
+    border-color: transparent;
+}
+
+.nav-tabs .active{
+    position: relative;
+}
+
+.modal-header .close {
+    margin-top: -2px;
+    color: #fff;
+    opacity: .8;
+}
+
+.nav-tabs .active::before{
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    background-color: #ed2228;
+    top: 0;
+    left: -2px;
+}
+
+
+.loader-div{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    background-color: #cac4c45c;
+}
+
+.loader-div .loader{
+    
+    display: block;
+    top: 45%; 
+}
+
+
+
+/* Mobile CSS */
+
+@media only screen and (max-width: 767px) {
+    .item img {
+        width: 250px;
+    }
+}
+
+@media only screen and (max-width: 991px) and (min-width: 768px) {
+    .target ::before {
+        left: 12px;
+    }
+
+    .total ::before {
+        left: 4px;
+    }
+}
+.account-section {
+    margin-bottom: 80px;
+}
+
+.heading .division{
+    color: #ccc !important;
+}
+
+/* Customize the label (the container) */
+.checkBox-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .checkBox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: transparent;
+    border: 1px solid #ed2228;
+    border-radius: 2px;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .checkBox-container:hover input ~ .checkmark {
+    background-color: #fff;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .checkBox-container input:checked ~ .checkmark {
+    border: 1px solid #ed2228;
+    background: transparent;
+    border-radius: 2px;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .checkBox-container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .checkBox-container .checkmark:after {
+    left: 6px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid #ed2228;
+    border-width: 0 1px 1px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+
+
+  /* Customize the label (the container) */
+.checkRadio-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default radio button */
+  .checkRadio-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom radio button */
+  .radiomark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border: 1px solid #ed2228;
+    border-radius: 50%;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .checkRadio-container:hover input ~ .radiomark {
+    background-color: #ffffff;
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .checkRadio-container input:checked ~ .radiomark {
+    background-color: #fff;
+  }
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .radiomark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  .checkRadio-container input:checked ~ .radiomark:after {
+    display: block;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .checkRadio-container .radiomark:after {
+    top: 5px;
+    left: 5px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ed2228;
+  }
+  @media (min-width: 768px){
+    .filter-section{
+        margin-bottom: -6px;
+    }
+    
+    }
+
+    
+    .heading  .beerSelection{
+        width: 100px;
+    }
+
+
+
+    .button {
+        background-color: #ed2228;
+        border: none;
+        color: white;
+        padding: 5px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 24px;
+        margin: 4px 2px;
+      }
+      
+      .button5 {border-radius: 50%;}
+    
+      .add-btn{
+        position: fixed;
+        bottom: 90px;
+        right: 30px;
+      }
+    
+    
+      .leadList {
+        /* / background-color: antiquewhite; / */
+        border-radius: 5px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+    }   
+    
+    
+    #bottomBarModal .main-head{
+        margin: 0;
+    }
+    
+    #bottomBarModal .modal-body{
+        padding: 15px;
+        display: block;
+    }

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BIRA91</title>
+    <!--Manifest-->
+    <link rel="manifest" href="/manifest.json">
+    <!--Manifest-->
+
+
+    <!--Imported Design library-->
+
+    <!--Bootstrap-->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>-->
+    <!--Bootstrap-->
+    <!--Imported Design library-->
+
+    <!--Imported link for App for Apple-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="BIRA91">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-57x57.png" sizes="57x57">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-60x60.png" sizes="60x60">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-72x72.png" sizes="72x72">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-76x76.png" sizes="76x76">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-114x114.png" sizes="114x114">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-120x120.png" sizes="120x120">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-152x152.png" sizes="152x152">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-180x180.png" sizes="180x180">
+    <meta name="msapplication-TileImage" content="/media/icons/manifest2/app-icon-48x48.png">
+    <meta name="msapplication-TileColor" content="#fff">
+    <meta name="theme-color" content="#3f51b5">
+    <!--Imported link for App for Apple and android-->
+
+    <!--Fontawesome CDN-->
+    <!--Front end imports-->
+    <link rel="stylesheet" href="../globalCSS/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha256-UK1EiopXIL+KVhfbFa8xrmAWPeBjMVdvYMYkTAEv/HI=" crossorigin="anonymous" />    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" integrity="sha256-4hqlsNP9KM6+2eA8VUT0kk4RsMRTeS7QGHIM+MZ5sLY=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../globalCSS/inhousestyle.css" />
+    <link rel="stylesheet" href="./createLead.css" />
+    <!--Front end imports-->
+   
+</head>
+
+<body>
+    
+    <div id="app">
+        <nav class="navbar navbar-default nav-custom navbar-fixed-top">
+            <div class="container-fluid">
+                <header class="index-header">
+                    <div class="toggle-btn text-left" onclick="openNav()">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                    <div class="logoSection nav-logo text-left">
+                        <h3>Beast <span id=userName></span></h3>
+                    </div>
+                </header>
+            </div>
+        </nav>
+        <div id="backdraw">
+            <div id="sideNav" class="sidenav">
+                <div class="logo-nav">
+                    <img src="/media/icons/logo/Icons-12.png" class="img-responsive" alt="">
+                </div>
+                <a href="/view/homePage/homePage.html"><i class="fas fa-home"></i>Home</a>
+                <a href="/view/accountList/accountListView.html"><i class="fas fa-tv"></i>Accounts</a>
+                
+                <a href="#"><i class="fas fa-clipboard-list"></i>Leads</a>
+                <a href="/view/calendar/calendar2.html"><i class="far fa-calendar-alt"></i>Calendar</a>
+                <div class="bottom-sidenav">
+                    <a href="/view/syncPage/loadingPage.html"><i class="fas fa-sync"></i>SYNC</a>
+                    <a href="#" data-toggle="modal" data-target="#logoutModal"><i class="fas fa-sign-out-alt"></i>LOGOUT</a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="create-lead">
+                        <h4 class="text-center"><b>Create Lead</b></h4>
+                        <div class="form-group">
+                            <label for="name" class="required">Outlet Name</label>
+                            <input type="text"  class="form-control" id="Name"  onkeyup="handleInputField(this)">
+                            <span class="error nameError">Name is Mandatory</span>
+                        </div>
+
+                        
+
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="number" class="form-control" id="Phone"  onkeyup="handleInputField(this)">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="website">Website</label>
+                            <input type="text" class="form-control" id="Website"  onkeyup="handleInputField(this)">
+                            <span class="error websiteerror">Please enter correct format</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="beer_selection">Beer Selection</label>
+                            <select class="form-control" id="Beer_Selection__c"  onchange="handleInputField(this)">
+                                <option value="">---None--</option>
+                                <option value="Premium">Premium</option>
+                                <option value="Boom">Boom</option>
+                              </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="channel">Channel</label>
+                            <select class="form-control" id="Channel__c" onchange="handleChannel(this)">
+                                <option value="" selected>--None--</option>
+                                <option value="On-Premise">On-Premise</option>
+                                <option value="Off-Premise">Off-Premise</option>
+                                <option value="Institutional">Institutional</option>
+                                <option value="Temporary Event">Temporary Event</option>
+                                <option value="E-Commerce">E-Commerce</option>
+                            </select>
+                            
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sub_channel">Sub-Channel</label>
+                            <select class="form-control" id="Sub_Channel__c"  onchange="handleSubChannel(this)" disabled>
+                                
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="type">Type</label>
+                            <select class="form-control" id="Type__c"   disabled>
+                            
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mtd_sales">Monthly Sales (CE)</label>
+                            <input type="number" step=".0001" class="form-control" id="Monthly_Sales_CE__c" onkeyup="handleInputField(this)">
+                            <span class="error mtderror">Only 4 decimal digits are allowed</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="qtd_sales">Quarterly Sales (CE)</label>
+                            <input type="number" step=".0001" class="form-control" id="Quaterly_Sales_CE__c" onkeyup="handleInputField(this)">
+                            <span class="error qtderror">Only 4 decimal digits are allowed</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="premium_sales">Monthly Competitor Premium Sales (CE)</label>
+                            <input type="number" class="form-control" id="Competitor_Premium_Sales__c" onkeyup="handleInputField(this)">
+                            <span class="error cpsError">Only 4 decimal digits are allowed</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="non_premium_sales">Monthly Competitor Mass Sales (CE)</label>
+                            <input type="number" class="form-control" id="Competitor_Non_Premium_Sales__c" onkeyup="handleInputField(this)">
+                            <span class="error cnpsError">Only 4 decimal digits are allowed</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" onkeyup="handleInputField(this)" id="Email__c">
+                            <span class="error emailerror">Please enter correct email</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="excise_code">Excise Code</label>
+                            <input type="text" class="form-control" id="Excise_Code__c" onkeyup="handleInputField(this)">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="GST">GST</label>
+                            <input type="text" class="form-control" onkeyup="handleInputField(this)" id="GST__c">
+                            <span class="error gsterror">Please enter GST in proper format</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tax_number">Local Sales Tax Number</label>
+                            <input type="text" class="form-control" id="Local_Sales_Tax_Number__c" onkeyup="handleInputField(this)">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="qco">QCO</label>
+                            <!-- <input type="checkbox" class="form-control" id="qco"> -->
+                            <label class="switch">
+                                <input type="checkbox" id="QCO_Flag__c" onchange="handleToggleHandler(this)">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="required" for="billing_address">Billing Address</label>
+                            <textarea type="text" class="form-control" id="BillingStreet" onkeyup="handleInputField(this)"></textarea>
+                            <span class="error billingAddressError">Billing Address is Mandatory</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            
+                            <label class="required" for="Billing_State_Geo__c">State</label>
+                            <div data-toggle="modal" data-target="#stateList">
+                                <input type="text" class="form-control" id="Billing_State_Geo__c" readonly>
+                                <button class="cluster-search"><i class="fa fa-search"></i></button>
+                            </div>
+                            <span class="error stateError">State is Mandatory</span>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="country">Country</label>
+                            <input type="text" class="form-control" value="India" readonly id="BillingCountry">
+                        </div>
+
+                       
+                        <div class="form-group">
+                            <label class="required" for="Sales_District__c">District</label>
+                            <!-- <input type="text" class="form-control" id="Sales_District__c" onkeyup="handleInputField(this)"> -->
+                            
+                            <div data-toggle="modal" data-target="#districtList">
+                                <input type="text" class="form-control" id="Sales_District__c" readonly>
+                                <button class="cluster-search"><i class="fa fa-search"></i></button>
+                            </div>
+                            
+                            <span class="error districtError">District is Mandatory</span>
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <label class="required" for="cluster">Cluster</label>
+                            <div data-toggle="modal" data-target="#showCluster">
+                                <input type="text" class="form-control" id="Cluster__c" readonly>
+                                <button class="cluster-search"><i class="fa fa-search"></i></button>
+                            </div>
+
+                            <span class="error clusterError">Cluster is Mandatory</span>
+                        </div>
+
+
+                        
+                        <div class="form-group">
+                            <label class="required" for="market">Market</label>
+                            <div data-toggle="modal" data-target="#showMarket">
+                                <input type="text" class="form-control" id="Market__c" readonly>
+                                <button class="cluster-search"><i class="fa fa-search"></i></button>
+                            </div>
+
+                            <span class="error marketError">Market is Mandatory</span>
+                        </div>
+                        
+                        
+                        
+                        <div class="submit-btn">
+                            <button type="submit"  onclick="handleSubmitLeadCreationForm()" class="btn btn-success">Submit</button>
+
+                            <button type="button" onclick="handleLeadRedirect()"  class="btn btn-danger">Cancel</button>
+                        </div>
+                        
+                    </div>  
+                </div>
+            </div>
+        </div>  
+    </div>    
+    
+            <footer class="bottom-nav mdl-layout--fixed-header">
+                <div class="nav-img">
+                    <img src="/media/images/homePage/rsz_icons-07.png" alt="">
+                </div>
+                <div class="nav-img">
+                    <img src="/media/images/homePage/rsz_icons-08.png" alt="">
+                </div>
+                <div class="nav-img">
+                    <img src="/media/images/homePage/rsz_icons-09.png" alt="">
+                </div>
+                <div class="nav-img">
+                    <img src="/media/images/homePage/rsz_icons-10.png" alt="">
+                </div>
+            </footer>
+
+
+            <!--Script imported-->
+            <!-- Cluster List Modal -->
+            <div id="showCluster" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="text-cente modal-title">List of Clusters </h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="search-bar text-center">
+                                <input type="text" placeholder="Search Cluster Name ...." onkeyup="handleClusterSearch(this)" class="form-control" id="search-cluster">
+                                <!-- <button class="cluster-search"><i class="fa fa-search"></i></button> -->
+                            </div>
+                            
+                            <div class="clusters" id="listOfCluster"> 
+
+                            </div>
+                        </div>
+                        <div class="modal-footer text-center">
+                            
+                            <button type="button" class="btn" style="background-color: #ed2228; color:#fff" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cluster List Modal -->
+           <!-- State List Modal -->
+           <div id="stateList" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="text-cente modal-title">List of States </h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="search-bar text-center">
+                            <input type="text" placeholder="Search State Name ...." onkeyup="handleStateSearch(this)" class="form-control" id="search-state">
+                            <!-- <button class="cluster-search"><i class="fa fa-search"></i></button> -->
+                        </div>
+                        
+                        <div class="clusters" id="listOfStates"> 
+
+                        </div>
+                    </div>
+                    <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- State List Modal -->
+
+        <!-- Dsitrict List Modal -->
+        <div id="districtList" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="text-cente modal-title">List of Districts </h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="search-bar text-center">
+                            <input type="text" placeholder="Search District Name ...." onkeyup="handleDistrictSearch(this)" class="form-control" id="search-district">
+                            <!-- <button class="cluster-search"><i class="fa fa-search"></i></button> -->
+                        </div>
+                        
+                        <div class="clusters" id="listOfDistrict"> 
+
+                        </div>
+                    </div>
+                    <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="showMarket" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="text-cente modal-title">List of Markets </h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="search-bar text-center">
+                            <input type="text" placeholder="Search Market Name ...." onkeyup="handleMarketSearch(this)" class="form-control" id="search-market">
+                            <!-- <button class="cluster-search"><i class="fa fa-search"></i></button> -->
+                        </div>
+                        
+                        <div class="clusters" id="listOfMarket"> 
+
+                        </div>
+                    </div>
+                    <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!-- Start Visit Modal -->
+            <!--Front End script-->
+            <script src="../globalJS/jquery-3.4.1.min.js"></script>
+            <script src="../globalJS/bootstrap.min.js"></script>
+            <script src="../globalJS/main.js"></script>
+            <script src="../globalJS/spinner.js"></script>
+            <script src="./createLead.js"></script>
+            <!--Front End script-->
+            <!-- Backend Import -->
+
+            <script src="/controller/indexedDB/idb.js"></script>
+            <script src="/controller/indexedDB/utility.js"></script>
+            <script src="/controller/sync/sync.js"></script>
+            <script src="/controller/globalJS/globalJS.js"></script>
+            <script src="/controller/leadCreate/leadCreate.js"></script>
+
+            <!-- Backend Import -->
+            <!--Script imported-->
+
+</body>
+
+</html>

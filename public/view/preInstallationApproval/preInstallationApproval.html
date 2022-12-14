@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>BIRA91</title>
+        <!--Manifest-->
+        <link rel="manifest" href="/manifest.json">
+        <!--Manifest-->
+    
+    
+        <!--Imported Design library-->
+        <!--MDL-->
+        <link rel="stylesheet" href="../globalCSS/bootstrap.min.css">
+        <!--Fontawesome CDN-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    
+    
+    
+        <!--Imported link for App for Apple-->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="BIRA91">
+        <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-57x57.png" sizes="57x57">
+        <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-60x60.png" sizes="60x60">
+        <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-72x72.png" sizes="72x72">
+        <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-76x76.png" sizes="76x76">
+        <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-114x114.png" sizes="114x114">
+        <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-120x120.png" sizes="120x120">
+        <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-144x144.png" sizes="144x144">
+        <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-152x152.png" sizes="152x152">
+        <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-180x180.png" sizes="180x180">
+        <meta name="msapplication-TileImage" content="/media/icons/manifest2/app-icon-48x48.png">
+        <meta name="msapplication-TileColor" content="#fff">
+        <meta name="theme-color" content="#3f51b5">
+        <!--Imported link for App for Apple and android-->
+        <link rel="stylesheet" href="../globalCSS/inhousestyle.css" />
+        <link rel="stylesheet" href="./preInstallationApproval.css" />
+    
+    </head>
+
+<body>
+    <!-- Always shows a header, even in smaller screens. -->
+    <div id="app">
+        <nav class="navbar navbar-default nav-custom navbar-fixed-top">
+            <div class="container-fluid">
+                <header class="index-header">
+                    <div class="toggle-btn text-left" onclick="openNav()">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                    <div class="logoSection nav-logo text-left">
+                        <h3>Beast <span id=userName></span></h3>
+                    </div>
+                    <div class="dropdown-toggle showDropdown" data-toggle="dropdown" style="display: none;">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li><a onclick="handlePageRedirect('Home')">Home</a></li>
+                        <li><a onclick="handlePageRedirect('Related')">Related</a></li>
+                        <li><a onclick="handlePageRedirect('Media')">Media</a></li>
+                      </ul>
+                </header>
+            </div>
+        </nav>
+        <div id="backdraw">
+            <div id="sideNav" class="sidenav">
+                <div class="logo-nav">
+                    <img src="/media/icons/logo/Icons-12.png" class="img-responsive" alt="">
+                </div>
+                <a href="/view/homePage/homePage.html"><i class="fas fa-home"></i>Home</a>
+                <a href="/view/accountList/accountListView.html"><i class="fas fa-tv"></i>Accounts</a>
+                <a href="#"><i class="fas fa-clipboard-list"></i>Leads</a>
+                <a href="/view/calendar/calendar2.html"><i class="far fa-calendar-alt"></i>Calendar</a>
+
+                <div class="bottom-sidenav">
+                    <a href="/view/syncPage/loadingPage.html"><i class="fas fa-sync"></i>SYNC</a>
+                    <a href="#" data-toggle="modal" data-target="#logoutModal"><i class="fas fa-sign-out-alt"></i>LOGOUT</a>
+                </div>
+            </div>
+        </div>
+       
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="account-section">
+                            <div class="panel-content" id="listOfAcc">
+    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <h4>Pre-Installation</h4>
+                        <div id="preInstall">
+                            
+                        </div>
+
+                        <div class="text-center">
+                            <!-- <button type="button" onclick="accountDetail()" class="btn btn-default">View Detail</button> -->
+                    
+                            <button type="button" onclick="approve()" class="btn btn-success">Approve</button>
+                            <button type="button" onclick="reject()" class="btn btn-danger">Reject</button>
+                        </div>
+                    </div>
+                            
+                </div>
+            </div>
+       </div>
+    </div>
+
+    <!-- <div id="rejectModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body text-center">
+                    <lable>Reason For Reject</lable>
+                    <select class="form-control" id="reject"  >
+                        <option value="">--None--</option>
+                        <option value="Volume Objection">Volume Objection</option>
+                        <option value="Empty Keg Not Received">Empty Keg Not Received</option>
+                        <option value="Payment Issue">Payment Issue</option>
+                    </select>
+                </div>
+                <div class="modal-footer text-center">
+                    <button type="button" onclick="handleReject()" class="btn btn-success">Yes</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                </div>
+            </div>
+        </div>
+   </div> -->
+
+            <footer class="bottom-nav mdl-layout--fixed-header">
+                <div class="nav-img">
+                    <img src="../../media/images/homePage/rsz_icons-07.png" alt="">
+                </div>
+                <div class="nav-img">
+                    <img src="../../media/images/homePage/rsz_icons-08.png" alt="">
+                </div>
+                <div class="nav-img">
+                    <img src="../../media/images/homePage/rsz_icons-09.png" alt="">
+                </div>
+                <div class="nav-img">
+                    <img src="../../media/images/homePage/rsz_icons-10.png" alt="">
+                </div>
+            </footer>
+       
+    </div>
+
+        <!--Script imported-->
+            
+            <!--Front End script-->
+            <script src="../globalJS/jquery-3.4.1.min.js"></script>
+            <script src="../globalJS/bootstrap.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
+                integrity="sha256-NXRS8qVcmZ3dOv3LziwznUHPegFhPZ1F/4inU7uC8h0=" crossorigin="anonymous"></script>
+            <script src="../globalJS/main.js"></script>
+            
+        <script src="/view/accountDetail/accountDetailUtility/utility.js"></script>
+            <script src="./preInstallationApproval.js"></script>
+            <!--Front End script-->
+            <!--Backend Scripts-->
+            
+            <script src="/controller/indexedDB/idb.js"></script>
+            <script src="/controller/indexedDB/utility.js"></script>
+            <script src="/controller/sync/sync.js"></script>
+            <script src="/controller/globalJS/globalJS.js"></script>
+            <script src="/controller/preInstallationApproval/preInstallationApproval.js"></script>
+            <!--Front End script-->
+            <!--Backend Scripts-->
+            
+            <!--Script imported-->
+</body>
+
+</html>

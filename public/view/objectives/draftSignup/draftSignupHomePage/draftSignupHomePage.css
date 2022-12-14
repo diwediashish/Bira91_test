@@ -1,0 +1,262 @@
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('https://netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/glyphicons-halflings-regular.eot');  src: url('https://netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('https://netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/glyphicons-halflings-regular.woff') format('woff'), url('https://netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('https://netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+  
+   
+  
+  }
+
+  .btn.focus, .btn:focus, .btn:hover {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+h4{
+    color: #ed2228;
+    font-weight: 700;
+}
+
+.draftSignUp{
+  margin-top: 85px;
+}
+
+#draft-signUp .row{
+  margin-bottom: 10px;
+}
+
+.required:after {
+    content:" *";
+    color: red;
+  }
+
+  input[type=file] {
+    display: none;
+  }
+
+  .btn-submit,.btn-selected{
+      background-color: #ed2228;
+      margin-top: 20px;
+      color: #fff;
+  }
+
+  .no-padd{
+    padding: 0;
+  }
+
+.btn-custom{
+  margin: 10px;
+  padding: 5px 15px;
+}
+
+  .image-upload_NoInput .camera {
+    width: 15%;
+    display: inline-block;
+    font-size: 27px;
+    position: absolute;
+    top: -4px;
+    margin: 0;
+    }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    height: 50px;
+  }
+        
+        .switch input { 
+        opacity: 0;
+        width: 0;
+        height: 0;
+        }
+        
+        .slider {
+        position: absolute;
+          cursor: pointer;
+          top: 10px;
+          left: 0;
+          right: 0;
+          width: 60px;
+          height: 30px;
+          bottom: 0;
+          background-color: #ccc;
+          -webkit-transition: .4s;
+          transition: .4s;
+        }
+        
+        .slider:before {
+        position: absolute;
+          content: "";
+          height: 26px;
+          width: 26px;
+          left: 4px;
+          bottom: 2px;
+          background-color: white;
+          -webkit-transition: .4s;
+          transition: .4s;
+        }
+        
+        input:checked + .slider {
+        background-color: #ed2228;
+        }
+        
+        input:focus + .slider {
+        box-shadow: 0 0 1px #ed2228;
+        }
+        
+        input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+        }
+        
+        /* Rounded sliders */
+        .slider.round {
+        border-radius: 34px;
+        }
+        
+        .slider.round:before {
+        border-radius: 50%;
+        }
+        
+
+        label {
+            text-transform: capitalize;
+            padding-top: 15px;
+        }
+
+        /* $bg: #332f35;
+        $fg: lighten($bg,20%);
+        $borderWidth: 3px;
+         */
+        
+        input[type=radio] {
+          position: absolute;
+          visibility: hidden;
+          display: none;
+        }
+        
+        .radio-group label {
+          color: #fff;
+          background-color: #ccc;
+          display: inline-block;
+          cursor: pointer;
+          font-weight: bold;
+          padding: 5px 15px;
+          margin: 0;
+          border: 1px solid #ccc;
+          border-radius: 10px;
+        }
+        
+        input[type=radio]:checked + label{
+          color: #fff;
+          opacity: 0.8;
+          background: #ed2228;
+        }
+        
+        .radio-group {
+          display: inline-block;
+          margin: 4px;
+          overflow: hidden;
+        }
+   
+      
+
+        .button-container {
+          height: 2.6rem;
+          border: 1px solid;
+          /* width: 80%; */
+          max-width: 100%;
+          border-radius: 6px;
+          margin: auto;
+        }
+        
+        .qty{
+          width:54%;
+          text-align:center;
+          background : #fbd6dd;
+          border: 0px solid #000;
+          border-right: none;
+          border-left: none;
+          height: 100%;
+          color:#000;
+          font-size:14px;
+        }
+        
+        @supports (-webkit-touch-callout: none) { 
+          .qty{
+            position: relative;
+            top:-2px;
+            height: 96%;
+            border-radius: 0;
+        
+          }
+        }
+        @media only screen and (min-device-width : 375px) and (max-device-width : 812px) and (-webkit-device-pixel-ratio : 3) and (orientation : portrait) { 
+          .qty{
+            position: relative;
+            height: 96%;
+            border-radius: 0;
+          }
+        }
+        
+        
+        .cart-btn{
+          width: 19%;
+            background: transparent;
+            box-shadow: 0 0 0 transparent;
+            border: 0px solid #000;
+            height: 100%;
+          color: red;
+        }
+        
+        .cart-qty-minus{
+          position:relative;
+          /* right:-4px; */
+          border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+          border-right: none;
+        }
+        
+        .cart-qty-plus{
+          border-left: none;
+          position:relative;
+          /* left:-5px; */
+          border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
+        }
+        
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+        
+        
+        input[type=number] {
+          -moz-appearance:textfield;
+        }
+               
+.confirmedCheck{
+  right: -110px;
+  left: initial;
+}
+/* 
+.date-value:before {
+  position: absolute;
+  top: 3px; left: 3px; 
+  content: attr(data-date);
+  display: inline-block;
+  color: black;
+}
+
+.date-value::-webkit-datetime-edit, .date-value::-webkit-inner-spin-button, .date-value::-webkit-clear-button {
+  display: none;
+}
+
+.date-value::-webkit-calendar-picker-indicator {
+  position: absolute;
+  top: 13px;
+  right: 30px;
+  color: black;
+  opacity: 1;
+} */

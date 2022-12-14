@@ -1,0 +1,198 @@
+body {
+    background-color: #ed2228;
+}
+
+img.logo{
+    width: 170px;
+}
+
+.index-header {
+    background-color: #fff;
+}
+
+.navbar-default{
+    background-color: #fff;
+}
+
+.btnDiv {
+    text-align: center;
+}
+
+.uservalidate {
+    display: none;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.login-btn,
+.btn-default:hover {
+    background-color: #ed2228 !important;
+    margin: 5px 0 0;
+    color: #fff;
+    position: relative;
+}
+
+.index-section {
+    height: 500px;
+    position: relative;
+}
+
+.banner {
+    position: absolute;
+    width: 600px;
+    left: -50px;
+    transform: translateX(-14%);
+}
+
+.banner-img {
+    width: 100%;
+}
+
+.loginSection {
+    text-align: right;
+    width: 100%;
+}
+
+.form-section {
+    border-radius: 40px;
+    padding: 35px 20px 50px;
+    background-color: #ffffffe6;
+    position: absolute;
+    top: 50%;
+    transform: translateY(50%);
+    right: 50px;
+}
+
+.form-section .mdl-textfield {
+    padding: 10px 15px;
+    background: #fff;
+    border-radius: 28px;
+    color: #000000;
+    border: 1px solid #ccc;
+    margin: 10px 0;
+}
+
+.input-field {
+    color: #000000;
+    width: 85%;
+    display: inline-block;
+    border: none;
+}
+
+
+.input-group-prepend {
+    width: 10%;
+    display: inline-block;
+    color: #ed2228;
+    position: relative;
+}
+
+.input-group-prepend::before {
+    content: '';
+    width: 1px;
+    height: 45px;
+    background-color: #ccc;
+    position: absolute;
+    right: 0;
+    top: -12px;
+}
+
+.forgot-pwd {
+    text-align: center;
+}
+
+/* Notification CSS */
+
+#notification {
+    font-family:Arial,Helvetica,sans-serif;
+    position:fixed;
+    bottom:0px;
+    left:0px;
+    width:100%;
+    z-index:105;
+    text-align:center;
+    font-weight:bold;
+    font-size:100%;
+    color:white;
+    padding:10px 0px 10px 0px;
+    background-color:rgb(119, 117, 117);
+}
+
+#notification span {
+    text-align: center;
+    width: 90%;
+    float:left;
+}
+
+.close-notify {
+    white-space: nowrap;
+    float:right;
+    margin-right:10px;
+    color:#fff;
+    text-decoration:none;
+    border:2px #fff solid;
+    padding-left:3px;
+    padding-right:3px
+}
+
+.close-notify a {
+    color: #fff;
+}
+
+
+.mode{
+    width: 85%;
+    margin: -40px 0 0 auto;
+    position: relative;
+    z-index: 999;
+}
+
+.beast{
+    width: 85%;
+    margin: 55px 0 -40px auto;
+}
+
+
+/* Spinner */
+
+.loader {
+    border: 8px solid #afadad;
+    border-radius: 50%;
+    border-top: 8px solid #ed2228;
+    width: 35px;
+    height: 35px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    margin: 10px auto;
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 43%;
+}
+  
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+
+@media (max-width: 767px) {
+    .form-section {
+        right: 20px;
+        width: 70%;
+    }
+
+    .banner {
+        position: absolute;
+        width: 460px;
+        left: -50px;
+        transform: translateX(-31%);
+        top: 0px;
+    }
+}

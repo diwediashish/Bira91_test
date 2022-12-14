@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>BIRA91</title>
+        <!--Manifest-->
+        <link rel="manifest" href="/manifest.json">
+        <!--Manifest-->
+    
+    
+        <!--Imported Design library-->
+        <!--MDL-->
+        <link rel="stylesheet" href="../globalCSS/bootstrap.min.css">
+        <!--Fontawesome CDN-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    
+    
+    
+        <!--Imported link for App for Apple-->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="BIRA91">
+        <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-57x57.png" sizes="57x57">
+        <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-60x60.png" sizes="60x60">
+        <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-72x72.png" sizes="72x72">
+        <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-76x76.png" sizes="76x76">
+        <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-114x114.png" sizes="114x114">
+        <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-120x120.png" sizes="120x120">
+        <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-144x144.png" sizes="144x144">
+        <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-152x152.png" sizes="152x152">
+        <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-180x180.png" sizes="180x180">
+        <meta name="msapplication-TileImage" content="/media/icons/manifest2/app-icon-48x48.png">
+        <meta name="msapplication-TileColor" content="#fff">
+        <meta name="theme-color" content="#3f51b5">
+        <!--Imported link for App for Apple and android-->
+        <link rel="stylesheet" href="../globalCSS/inhousestyle.css" />
+        <style>
+            img {
+                transition: transform 1s;
+                transform: scale(0,0);  
+            }
+            img.loaded {
+                transform: scale(1,1);  
+            }
+            .mainDiv{
+                width: 100%;height: 100vh;position: relative;background-color: #ed2228;overflow: hidden;
+            }
+            #app{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);padding: 0;
+            }
+        </style>
+    </head>
+
+<body>
+    <div class="mainDiv">
+        <div id="app">
+            <img src="/media/images/loginPage/splash1.png" class="zoom">
+        </div>
+    </div>
+
+    <script src="../globalJS/jquery-3.4.1.min.js"></script>
+    <script src="../globalJS/main.js"></script>
+            <!--Backend End Import-->
+    <script src="/controller/indexedDB/idb.js"></script>
+    <script src="/controller/indexedDB/utility.js"></script>
+    <script src="/controller/sync/sync.js"></script>
+    <script src="/controller/globalJS/globalJS.js"></script>
+    <!--Backend End Import-->
+    <script>
+        $(document).ready(function(){
+            $('.zoom').addClass('loaded');
+            setTimeout(async () => {
+                let urlParam = new URLSearchParams(window.location.search);
+                if(urlParam.has('syncRequired')){
+                    window.location.href = '/view/syncPage/loadingPage.html'; 
+                }
+                else{
+                    const nonSales = await isTechnicianAuditorFuncHelper();
+                    if(nonSales.isSales){
+                        window.location.href = '/view/homePage/homePage.html';
+                    }
+                    else{
+                        window.location.href = '/view/homePageTechnician/homePageTechnician.html';
+                    }
+    
+                }
+            },1500);
+        });
+    </script>
+
+</body>
+
+</html>

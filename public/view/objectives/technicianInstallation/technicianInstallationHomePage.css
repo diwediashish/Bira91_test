@@ -1,0 +1,120 @@
+
+  .panel-content {
+    margin: 57px 0 0;
+    }
+    
+    .accountList {
+      position: fixed;
+      background: white;
+      width: 100%;
+      left: 0;
+      padding: 0 15px;
+      z-index: 10;
+    }
+    
+    
+    .main-head {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    }
+    
+    .heading {
+    width: 58%;
+    display: inline-block;
+    vertical-align: top;
+    }
+    
+    .heading span {
+    position: relative;
+    top: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ed2228;
+    }
+    
+    .heading img {
+    width: 40px;
+    }
+    
+    .heading .about {
+    font-size: 15px;
+    color: #777777;
+    font-weight: 500;
+    }
+    
+    .main-head p {
+    color: #777777;
+    }
+    
+    .feat {
+    width: 40%;
+    display: inline-block;
+      text-align: right;
+    }
+    
+    .feat span {
+    width: 24%;
+    display: inline-block;
+    margin: 3px;
+    margin-top: 0;
+    text-align: center;
+    }
+    
+    
+    
+    .feat .name {
+    /* background-color: #ed2228; */
+    color: #000;
+    border-radius: 7px;
+    }
+    
+    .feat span img {
+    width: 30px;
+    }
+
+
+
+.heading1 {
+    margin:0 10px 30px 0px;
+    color: #ed2228;
+    font-size:20px;
+    font-weight:bold;
+    margin-top: 90px;
+}
+
+#app {
+    padding-bottom: 40%;
+    position: relative;
+}
+
+.btn {
+  border: 1px solid #ed2228;
+  font-size: 15px;
+  color: #000;
+  background: transparent;
+    margin-top: 18px;
+    border-radius: 10px;
+    padding: 8px 0 8px 0;
+    width: 98%;
+}
+
+.back-btn{
+  width: 100px;
+  border-radius: 10px;
+  padding: 8px 15px;
+  background-color: #ed2228;
+  color: #fff;
+}
+
+.checkout {
+    width: 50%;
+    margin-top: 70px;
+    font-size: 15px;
+}
+
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #000;
+}

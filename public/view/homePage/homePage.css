@@ -1,0 +1,379 @@
+/* Style the search field */
+.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 2px solid rgb(167, 164, 164);
+  float: left;
+  width: 85%;
+  color: rgb(167, 164, 164);
+  background: #fff;
+  border-radius: 20px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: none;
+}
+
+/* Style the submit button */
+.example button {
+  float: left;
+  width: 15%;
+  padding: 10px;
+  background: #fff;
+  color:rgb(167, 164, 164);
+  font-size: 17px;
+  border: 2px solid rgb(167, 164, 164);
+  border-right: none;
+  cursor: pointer;
+  border-radius: 20px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.example button:hover {
+  background: #0b7dda;
+}
+
+/* Clear floats */
+.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.example{
+  margin: 80px 0 0;
+  position: relative;
+}
+
+#searchElement{
+  position: absolute;
+  top: 45px;
+  width: 93%;
+  padding: 0;
+  overflow-y: scroll;
+  max-height: 300px;
+  z-index: 10;
+}
+
+#searchElement li{
+  display: none;
+  
+  list-style: none;
+  background: rgb(241, 234, 234);
+  padding: 10px;
+  border-bottom: 1px solid #000;
+}
+
+#searchElement li a{
+  color: #000000;
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+/* Slider */
+
+.slider2{
+  margin: 20px 0;
+}
+
+.slick-dots li.slick-active button:before{
+  color: #ed2228;
+}
+
+.item{
+  padding: 15px;
+}
+
+.slider1 .item{
+  background-color: #fff;
+  border: 1px solid #ed2228;
+  border-radius: 10px;
+  outline: none;
+}
+
+.slick-initialized .slick-slide {
+  display: block;
+  margin: 8px;
+}
+
+.home-section{
+  margin: 25px 0;
+}
+
+.item h4{
+  color: #ed2228;
+  font-size:1.25em;
+}
+
+.target-section{
+  width: 100%;
+  display: flex;
+  vertical-align: middle;
+  justify-content: center;
+}
+
+.details,.total{
+  width: 49%;
+  display: inline-block;
+}
+
+.target,.achieved{
+  width: 100%;
+  text-align: center;
+  padding: 3px;
+  position: relative;
+}
+
+.achieved::before{
+  content: '';
+  width: 60px;
+  height: 2px;
+  background-color: #ed2228;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.target h3,.achieved h3{
+  color: #ed2228;
+  font-weight: 700;
+  margin: 5px;
+}
+
+.target p,.achieved p{
+  margin: 0;
+  font-weight: 600;
+  color:#ed2228;
+}
+
+.total h2{
+  font-weight: 700;
+  text-align: center;
+  color:#ed2228;
+  position: relative;
+  top: 20px;
+}
+
+.total{
+  position: relative;
+}
+
+.total ::before{
+  content: '';
+  width: 2px;
+  height: 80px;
+  background-color: #ed2228;
+  position: absolute;
+  left: 0;
+  top: -20px;
+}
+
+/* Accordion */
+
+.accordion1 {
+  color: #ed2228;
+  font-weight: 600;
+  letter-spacing: 1px;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 15px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+  margin: 15px 0 0;
+  position: relative;
+}
+
+
+ /*.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+} 
+*/
+.accordion1 img{
+  width: 50px;
+  margin-right: 10px;
+}
+
+.active:after {
+  content: "\2212";
+} 
+
+.panel {
+  /* padding: 0 18px; */
+  background-color: white;
+  transition: max-height 0.2s ease-out;
+  margin-top: 15px;
+}
+
+.panel-content{
+  padding:0 0 0 5px;
+  margin-top: 0;
+}
+
+.panel-content li{
+  list-style: none;
+  padding: 7px;
+  color: #777777;
+  
+}
+
+.main-head{
+  width: 100%;
+  margin: 15px 0 0;
+}
+.heading{
+  width: 58%;
+  display: inline-block;
+}
+
+.main-head .accountName{
+  position: relative;
+  top: 5px;
+  font-size: 16px;
+  font-weight: 700;
+  /* color: #ed2228; */
+  color:#000;
+  width: 75%;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  text-overflow: ellipsis;
+  text-transform: capitalize;
+}
+
+
+
+
+.main-head img{
+  width: 30px;
+}
+
+.heading .about{
+  font-size: 15px;
+  color: #777777;
+  font-weight: 500;
+}
+
+.main-head p{
+  color: #777777;
+  margin-bottom: 0;
+}
+span.label.label-default {
+  width: 100%;
+}
+span.label.label-primary {
+  width: 100%;
+}
+span.label.label-success {
+  width: 100%;
+}
+.feat{
+width: 40%;
+display: inline-block;
+vertical-align: top;
+text-align: right;
+}
+
+.feat span{
+  width: 23%;
+  display: inline-block;
+  margin: 5px;
+  margin-top: 0;
+  text-align: center;
+}
+
+.feat .name{
+  /* background-color: #ed2228; */
+  color: #000;
+  border-radius: 7px;
+}
+
+.feat span img{
+  width: 30px;
+}
+
+
+/* Mobile CSS */
+
+@media only screen and (max-width: 767px){
+  .item img{
+    width: 250px;
+  }
+}
+
+@media only screen and (max-width: 991px) and (min-width: 768px){
+  .target ::before{
+    left: 12px;
+  }
+
+  .total ::before{
+    left: 4px;
+  }
+}
+
+
+.account-card .accountSearch{
+  display: inline-block;
+  margin-left: 12px;
+  vertical-align: top;
+  font-size: 16px;
+}
+
+.account-card span{
+  font-size: 14px;
+}
+
+.account-card img{
+  width: 65px;
+}
+
+.target h3 {
+  font-size: 18px;
+}
+.btn-group .visitBtn{
+  border-radius: 6px;
+  width: 85px;
+  border: 2px solid #ed2228;
+  color: #000;
+  border-top-right-radius: 6px !important;
+  border-bottom-right-radius: 6px !important;
+}
+
+
+
+#startVisit,#endVisit{
+  transform: translateY(25%);
+}
+
+.heading  .beerSelection{
+  width: 120px;
+}
+
+#pullout-approval, #preInstall-approval{
+  margin-top: 15px;
+}
+
+#todaysMeetingModal .modal-header {
+  padding: 15px;
+  border-bottom: 1px solid #e5e5e5;
+  background: #d9534f;
+  color: #fff;
+}
+
+
+#todaysMeeting{
+  margin-top: 10px;
+}

@@ -1,0 +1,112 @@
+.panel-content {
+  margin: 57px 0 0;
+}
+
+.main-head {
+  width: 100%;
+  margin:  0;
+  padding:  0;
+}
+
+.accountList {
+  position: fixed;
+  background: white;
+  width: 100%;
+  left: 0;
+  padding: 0 15px;
+  z-index: 9;
+}
+
+.heading-tag{
+  margin-top: 90px;
+}
+
+.heading {
+  width: 58%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.heading span {
+  position: relative;
+  top: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ed2228;
+}
+
+.heading img {
+  width: 40px;
+}
+
+.heading .about {
+  font-size: 15px;
+  color: #777777;
+  font-weight: 500;
+}
+
+.main-head p {
+  color: #777777;
+}
+
+.feat {
+  width: 40%;
+  display: inline-block;
+    text-align: right;
+}
+
+.feat span {
+  width: 24%;
+  display: inline-block;
+  margin: 3px;
+  margin-top: 0;
+  text-align: center;
+}
+
+
+
+.feat .name {
+  /* background-color: #ed2228; */
+  color: #000;
+  border-radius: 7px;
+}
+
+.feat span img {
+  width: 30px;
+}
+
+h4{
+  color: #ed2228;
+  font-weight: 700;
+}
+
+.btn {
+  /* margin: 0 10px 30px 0px; */
+  background-color: #ed2228;
+  color: #fff;
+}
+
+#brand-section{
+padding-bottom: 30px;
+}
+
+#brand-freshness{
+margin: 85px 0 30px;
+}
+
+label{
+margin-top: 10px;
+}
+
+.item {
+border: 1px solid #ccc;
+border-radius: 10px;
+padding: 10px;
+margin-bottom: 15px;
+}
+
+.btn-section{
+width: 90%;
+text-align: center;
+margin: auto;
+}

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BIRA91</title>
+    <!--Manifest-->
+    <link rel="manifest" href="/manifest.json">
+    <!--Manifest-->
+
+
+    <!--Imported Design library-->
+
+    <!--Bootstrap-->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>-->
+    <!--Bootstrap-->
+    <!--Imported Design library-->
+
+    <!--Imported link for App for Apple-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="BIRA91">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-57x57.png" sizes="57x57">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-60x60.png" sizes="60x60">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-72x72.png" sizes="72x72">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-76x76.png" sizes="76x76">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-114x114.png" sizes="114x114">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-120x120.png" sizes="120x120">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-152x152.png" sizes="152x152">
+    <link rel="apple-touch-icon" href="/media/icons/manifest2/apple-icon-180x180.png" sizes="180x180">
+    <meta name="msapplication-TileImage" content="/media/icons/manifest2/app-icon-48x48.png">
+    <meta name="msapplication-TileColor" content="#fff">
+    <meta name="theme-color" content="#3f51b5">
+    <!--Imported link for App for Apple and android-->
+
+    <!--Fontawesome CDN-->
+    <!--Front end imports-->
+    <link rel="stylesheet" href="/view/globalCSS/bootstrap.min.css">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+        integrity="sha256-UK1EiopXIL+KVhfbFa8xrmAWPeBjMVdvYMYkTAEv/HI=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
+        integrity="sha256-4hqlsNP9KM6+2eA8VUT0kk4RsMRTeS7QGHIM+MZ5sLY=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/view/globalCSS/inhousestyle.css" />
+
+    <link rel="stylesheet" href="checkout.css" />
+    <!--Front end imports-->
+    <!--Compressing Images-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/browser-image-compression@latest/dist/browser-image-compression.js"></script>
+    <!--Compressing Images-->
+
+</head>
+
+<body>
+    <div id="app">
+
+        <nav class="navbar navbar-default nav-custom navbar-fixed-top">
+            <div class="container-fluid">
+                <header class="index-header">
+                    <div class="toggle-btn text-left" onclick="openNav()">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                    <div class="logoSection nav-logo text-left">
+                        <h3>Beast <span id=userName></span></h3>
+                    </div>
+                </header>
+            </div>
+        </nav>
+        <div id="backdraw">
+            <div id="sideNav" class="sidenav">
+                <div class="logo-nav">
+                    <img src="/media/icons/logo/Icons-12.png" class="img-responsive" alt="">
+                </div>
+                <a href="/view/homePage/homePage.html"><i class="fas fa-home"></i>Home</a>
+                <a href="/view/accountList/accountListView.html"><i class="fas fa-tv"></i>Accounts</a>
+                <a href="#"><i class="fas fa-clipboard-list"></i>Leads</a>
+                <a href="/view/calendar/calendar2.html"><i class="far fa-calendar-alt"></i>Calendar</a>
+
+                <div class="bottom-sidenav">
+                    <a href="/view/syncPage/loadingPage.html"><i class="fas fa-sync"></i>SYNC</a>
+                    <a href="#" data-toggle="modal" data-target="#logoutModal"><i
+                            class="fas fa-sign-out-alt"></i>LOGOUT</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-xs-12">
+
+                    <div class="account-section">
+                        <div class="panel-content" id="listOfAcc">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12" style="margin-bottom: 3%;">
+                    <div style="float: left;" ><h4 style="color: #ed2228;"><b>Check-out</b></h4></div>
+                    <div style="text-align: right;"><button style="margin-top: 5px;margin-right: 0;" type="button" onclick="refreshTaskForm()" data-toggle="modal" data-target="#taskCreation" class="btn btn-default">Follow-up Task</button></div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="text-left">
+                        <label class="switch">
+                            Met Decision Maker
+                        </label>
+                    </div>
+
+                </div>
+                <div class="col-xs-6">
+                    <label class="switch">
+                        <input type="checkbox" id="Met_Decision_Maker__c" onchange="checkBoxChangeHandler()">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="col-xs-6">
+
+                    <div class="form-group">
+                        <label class="switch">
+                            Contact
+                        </label>
+
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <select class="form-control" id="Person_Contacted__c" onchange="handleContactClicked(this)">
+                        <option value="-1">--None--</option>
+                    </select>
+                </div>
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="comment">Comment</label>
+                        <textarea class="form-control" rows="5" placeholder="Add Comments here...."
+                            id="Comments__c"></textarea>
+                    </div>
+                </div>
+                <div class="col-xs-12" style="margin-top: 3%;">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="panel-heading">
+                                <div style="float: left;">Contacts</div>
+                                <div style="text-align: right;"  data-toggle="modal" data-target="#contactCreation"><i onclick="handleCreateContact()"
+                                        class="fas fa-plus-square"></i></div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12" id="contactList">
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-xs-12">
+                    <button style="width: 91%;" type="button" class="btn" onclick="handleCheckedOut()">Finish</button>
+                </div>
+
+                <div id='notification' style="display: none;">
+                    <span>Username or Password is incorrect</span>
+                    <a href="#" class="close-notify">X</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Creation Modal -->
+        <div class="modal fade" id="contactCreation" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <form onsubmit="return false;">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Contact Creation</h4>
+                        </div>
+                        <div class="modal-body">
+
+                            <div class="form-group">
+                                <label for="contactTitle showReq">Title</label>
+                                <select class="form-control" id="contactTitle" required>
+                                    <option disabled selected value="">Please Select Title</option>
+                                    <option value="Mr.">Mr.</option>
+                                    <option value="Ms.">Ms.</option>
+                                    <option value="Mrs.">Mrs.</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactFirstName showReq">First Name</label>
+                                <input type="text" class="form-control" required id="contactFirstName">
+                            </div>
+                            <div class="form-group">
+                                <label for="contactLastName showReq">Last Name</label>
+                                <input type="text" class="form-control" required id="contactLastName">
+                            </div>
+                            <div class="form-group">
+                                <label for="contactResidentialAddress">Residential Address</label>
+                                <textarea class="form-control" rows="3" id="contactResidentialAddress"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactPhone1 showReq">Phone 1</label>
+                                <input type="tel" class="form-control" required id="contactPhone1">
+                            </div>
+                            <div class="form-group">
+                                <label for="contactPhone2">Phone 2</label>
+                                <input type="tel" class="form-control" id="contactPhone2">
+                            </div>
+                            <div class="form-group">
+                                <label for="contactEmail">Email</label>
+                                <input type="email" class="form-control" id="contactEmail">
+                                <span class="emailConReq">Email is invalid</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactBirthDate">Birth Date</label>
+                                <input type="date" class="form-control" id="contactBirthDate">
+                            </div>
+                            <div class="form-group">
+                                <label for="contactAniversary">Aniversary Date</label>
+                                <input type="date" class="form-control" id="contactAniversary">
+                            </div>
+                            <div class="form-group">
+                                <label for="contactRole">Role</label>
+                                <select class="form-control" id="contactRole" required>
+                                    <option disabled selected value="">Please Select Role</option>
+                                    <option value="Outlet Owner">Outlet Owner</option>
+                                    <option value="General Manager">General Manager</option>
+                                    <option value="Restaurant Manager">Restaurant Manager</option>
+                                    <option value="Chef">Chef</option>
+                                    <option value="Accounts Manager">Accounts Manager</option>
+                                    <option value="Cashier">Cashier</option>
+                                    <option value="F&B Manager">F&B Manager</option>
+                                    <option value="Outlet Manager">Outlet Manager</option>
+                                    <option value="Purchase Manager">Purchase Manager</option>
+                                    <option value="Bar Manager">Bar Manager</option>
+                                    <option value="Bar Tender">Bar Tender</option>
+                                    <option value="Waiter/Clerk">Waiter/Clerk</option>
+                                    <option value="House Keeping">House Keeping</option>
+                                    <option value="Captain">Captain</option>
+                                    <option value="Distributor Owner">Distributor Owner</option>
+                                    <option value="Distributor Manager">Distributor Manager</option>
+                                    <option value="Sales Officer">Sales Officer</option>
+                                    <option value="Finance Executive">Finance Executive</option>
+                                    <option value="Invoice Executive">Invoice Executive</option>
+                                    <option value="Order/Dispatch Executive">Order/Dispatch Executive</option>
+                                    <option value="Depot Manager">Depot Manager</option>
+                                    <option value="Depot Executive">Depot Executive</option>
+                                </select>
+                            </div>
+                            <div class="form-group row">
+                                    <div class="col-xs-8" style="padding: 0;">
+                                        <label class="control-label" for="contactAadharNumber">Aadhar Number</label>
+                                        <input type="text" class="form-control" id="contactAadharNumber" aria-describedby="basic-addon1">
+                                        <span class="aadharConReq">Aadhar number is invalid</span>
+                                    </div>    
+                                    <div class="col-xs-4">
+                                        <label for="contactAadharNumberFile">
+                                            <i class="fa fa-camera contactAadharNumberFile" aria-hidden="true"></i>
+                                        </label>
+                                        <input id="contactAadharNumberFile" lang="contactAadharNumberFile" onchange="handleVisitingSave(this)"     accept="image/*" type="file"/>
+                                    </div>
+                                
+                            </div>
+                            <div class="form-group row">
+                                
+                                    <div class="col-xs-8" style="padding: 0;">
+                                        <label class="control-label" for="contactPANNumber">PAN Card</label>
+                                        <input type="text" class="form-control" id="contactPANNumber" aria-describedby="basic-addon1">
+                                        <span class="panConReq">PAN Card is invalid</span>
+                                    </div>    
+                                    <div class="col-xs-4">
+                                        <label for="contactPANNumberFile">
+                                            <i class="fa fa-camera contactPANNumberFile" aria-hidden="true"></i>
+                                        </label>
+                                        <input id="contactPANNumberFile" lang="contactPANNumberFile" onchange="handleVisitingSave(this)"     accept="image/*" type="file"/>
+                                    </div>
+                                
+                                
+                            </div>
+                            <div class="form-group row">
+                                
+                                <div class="col-xs-8" style="padding: 0;">
+                                    <label class="control-label" for="VisitingCard">Visiting Card</label>
+                                    
+                                    
+                                </div>    
+                                <div class="col-xs-4">
+                                    <label for="VisitingCard">
+                                        <i class="fa fa-camera VisitingCard" aria-hidden="true" style="top:2px;"></i>
+                                    </label>
+                                    <input id="VisitingCard" lang="VisitingCard" onchange="handleVisitingSave(this)"     accept="image/*" type="file"/>
+                                </div>
+                            
+                            
+                        </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-success" onclick="handleSaveContact()" >Save</button>
+                        </div>
+                </div>
+                </form>
+            </div>
+        </div>
+        <!-- Contact Creation Modal -->
+
+        <!-- Follow - Task Creation Modal -->
+
+<!-- Modal -->
+<div id="taskCreation" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <form onsubmit="return false">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Task Creation</h4>
+        </div>
+        
+
+
+        <div class="modal-body">
+            
+            <div class="form-group">
+                <label for="Subject showReq">subject</label>
+                <input type="text" class="form-control" required id="Subject">
+            </div>
+            <div class="form-group">
+                <label for="Description">Description</label>
+                <textarea class="form-control" rows="3"  placeholder="Add Description here...."
+                    id="Description"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="Priority showReq">Priority</label>
+                <select class="form-control" id="Priority" required>
+                    <option selected value="Normal">Normal</option>
+                    <option value="High">High</option>
+                    
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="ActivityDate">Due Date</label>
+                <input type="date" class="form-control" id="ActivityDate" required>
+            </div>
+        </div>
+    
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" onclick="handleTaskSubmit()" class="btn btn-success" >Save</button>
+        </div>
+      </div>
+    </form>
+    </div>
+  </div>
+        <!-- Follow - Task Creation Modal -->
+        <footer class="bottom-nav mdl-layout--fixed-header">
+            <div class="nav-img">
+                <img src="/media/images/homePage/rsz_icons-07.png" alt="">
+            </div>
+            <div class="nav-img">
+                <img src="/media/images/homePage/rsz_icons-08.png" alt="">
+            </div>
+            <div class="nav-img">
+                <img src="/media/images/homePage/rsz_icons-09.png" alt="">
+            </div>
+            <div class="nav-img">
+                <img src="/media/images/homePage/rsz_icons-10.png" alt="">
+            </div>
+        </footer>
+
+
+        <!--Script imported-->
+
+        <!--Front End script-->
+        <script src="/view/globalJS/jquery-3.4.1.min.js"></script>
+        <script src="../../globalJS/bootstrap.min.js"></script>
+        <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
+            integrity="sha256-NXRS8qVcmZ3dOv3LziwznUHPegFhPZ1F/4inU7uC8h0=" crossorigin="anonymous"></script>
+        <script src="/view/globalJS/main.js"></script>
+        <script src="/view/accountDetail/accountDetailUtility/utility.js"></script>
+        <script src="checkout.js"></script>
+        <!--Front End script-->
+        <!--Backend Scripts-->
+        <script src="/controller/indexedDB/idb.js"></script>
+        <script src="/controller/indexedDB/utility.js"></script>
+        <script src="/controller/sync/sync.js"></script>
+        <script src="/controller/objectives/checkout.js"></script>
+        <script src="/controller/globalJS/globalJS.js"></script>
+        <!--Backend Scripts-->
+        <!--Script imported-->
+
+</body>
+
+</html>

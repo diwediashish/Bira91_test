@@ -1,0 +1,201 @@
+.panel-content {
+    margin: 50px 0 0;
+  }
+  
+  .col-xs-12{
+    padding: 0;
+  }
+  
+  .accountList{
+    position: fixed;
+      background: white;
+      width: 100%;
+      left: 0;
+      padding: 0 15px;
+      z-index: 9;
+  }
+  .main-head {
+    width: 100%;
+    margin: 10px 0 0;
+    padding: 0;
+  }
+  
+  .heading {
+    width: 58%;
+    display: inline-block;
+    vertical-align: top;
+  }
+  
+  .heading span {
+    position: relative;
+    top: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ed2228;
+  }
+  
+  .heading img {
+    width: 40px;
+  }
+  
+  .heading .about {
+    font-size: 15px;
+    color: #777777;
+    font-weight: 500;
+  }
+  
+  .main-head p {
+    color: #777777;
+  }
+  
+  .feat {
+    width: 40%;
+    display: inline-block;
+    text-align: right;
+  }
+  
+  .feat span {
+    width: 24%;
+    display: inline-block;
+    margin: 3px;
+    margin-top: 0;
+    text-align: center;
+  }
+  
+  
+  
+  .feat .name {
+    /* background-color: #ed2228; */
+    color: #000;
+    border-radius: 7px;
+  }
+  
+  .feat span img {
+    width: 30px;
+  }
+  
+  .check-in,.check-out{
+    text-align:center;
+    margin:20px 0;
+  }
+  
+  .btn-default{
+    background-color: #fff;
+      color: #000;
+      border: 1px solid #ed2228;
+  }
+  
+  .objectives{
+    padding: 0 10px;
+    margin-top: 90px;
+  }
+  
+  .objectives h2{
+    color: #ed2228;
+    text-align:left;
+    font-size: 19px;
+    font-weight: 600;
+  }
+  
+  #listofAudit{
+      text-align: center;
+  }
+
+  .audit-btn{
+      background-color: #ed2228;
+      color: #fff;
+      display: block;
+      width: 80%;
+      margin: 20px auto;
+      border-radius: 10px;
+  }
+
+
+  
+.switch {
+  position: relative;
+  display: inline-block;
+  height: 50px;
+  width: 100%;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+    cursor: pointer;
+    top: -4px;
+    right: 0;
+    width: 60px;
+    height: 30px;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #ed2228;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #ed2228;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+label{
+  font-weight: 400;
+}
+.audits{
+    margin-top: 85px;
+}
+
+.audit-heading h4{
+    margin: 25px 15px;
+    font-weight: 700;
+}
+
+
+.btn{
+    background-color: #ed2228;
+    width: 40%;
+    color: #ffffff;
+    margin: 15px;
+    border-radius: 5px;
+}
+
+.btn-submit{
+  border: 1px solid #ed2228;
+  background-color: transparent;
+  color: #000;
+}
