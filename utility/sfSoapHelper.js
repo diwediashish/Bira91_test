@@ -144,7 +144,7 @@ const fetchAppropriateFile = (req) => {
     else if ((req.get('host')) === ('beast91-clone-app.herokuapp.com')) {
         return 'prodwsdl.xml';
     }
-    else if ((req.get('host')) === ('https://bira91-test.herokuapp.com/')) {
+    else if ((req.get('host')) === ('bira91-test.herokuapp.com')) {
         return 'sandbox.xml';
     }
     else if ((req.get('host')) === ('localhost:3400')) {
